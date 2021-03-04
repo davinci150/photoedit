@@ -48,7 +48,7 @@ class _LoaderState extends State<LoaderScreen> {
               ),
               Image.asset(
                 'assets/exciter1.png',
-                width: 210,
+                width: 211,
                 height: 75,
               ),
               const SizedBox(
