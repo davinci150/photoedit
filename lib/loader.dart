@@ -1,11 +1,10 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:mynewproject/home_screen.dart';
+import 'package:mynewproject/start_screen.dart';
+import 'home_screen.dart';
 
 class LoaderScreen extends StatefulWidget {
   //LoaderScreen(Alignment center);
-  LoaderScreen();
+  const LoaderScreen({Key key}) : super(key: key);
 
   @override
   _LoaderState createState() => _LoaderState();
@@ -17,8 +16,8 @@ class _LoaderState extends State<LoaderScreen> {
     Future.delayed(const Duration(milliseconds: 5000), () {
       //Navigator.pushNamed(context, HomeScreen());
       //Navigator.of(context).pushNamed(HomeScreen);
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      Navigator.push<dynamic>(context,
+          MaterialPageRoute<dynamic>(builder: (context) => StartScreen()));
     });
     super.initState();
   }
@@ -31,7 +30,7 @@ class _LoaderState extends State<LoaderScreen> {
       body: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 140),
-        child: Container(
+        child: SizedBox(
           width: 210,
           child: Column(
             //width: MediaQuery.of(context).size.width * 0.9,
