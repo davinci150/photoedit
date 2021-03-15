@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
+import 'my_flutter_app_icons.dart';
 
 class StartScreen extends StatefulWidget {
   StartScreen({Key key}) : super(key: key);
-
+  //static const String _title = 'Flutter Code Sample';
   @override
   _StartScreen createState() => _StartScreen();
 }
@@ -14,19 +15,15 @@ class _StartScreen extends State<StartScreen> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Present',
+      'Index 0: Home',
       style: optionStyle,
     ),
     Text(
-      'Edit',
+      'Index 1: Business',
       style: optionStyle,
     ),
     Text(
-      'Texture',
-      style: optionStyle,
-    ),
-    Text(
-      'VideoEffect',
+      'Index 2: School',
       style: optionStyle,
     ),
   ];
@@ -40,73 +37,95 @@ class _StartScreen extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: const Text(
-            'Recent',
-            style: TextStyle(
-                color: Colors.black, fontSize: 17, fontFamily: 'SF-Pro'),
-          ),
-          leading: Builder(builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(
-                Icons.error_outline,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, MaterialPageRoute(builder: (context) someDa=> const HomeScreen()));
-              },
-            );
-          }),
-          actions: [
-            IconButton(
+        appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            elevation: 0,
+            title: const Text(
+              'Recent',
+              style: TextStyle(
+                  color: Colors.black, fontSize: 17, fontFamily: 'SF-Pro'),
+            ),
+            leading: Builder(builder: (BuildContext context) {
+              return IconButton(
                 icon: const Icon(
-                  Icons.add_circle_outline,
+                  Icons.error_outline,
                   color: Colors.black,
                 ),
-                onPressed: () {}),
-          ]),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black,
+                onPressed: () {
+                  Navigator.push<dynamic>(
+                      context,
+                      MaterialPageRoute<dynamic>(
+                          builder: (context) => HomeScreen()));
+                },
+              );
+            }),
+            actions: [
+              IconButton(
+                  icon: const Icon(
+                    Icons.add_circle_outline,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {}),
+            ]),
+        /*body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),*/
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              label: '',
             ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.business,
-              color: Colors.black,
+            BottomNavigationBarItem(
+              icon: Icon(
+                MyFlutterApp.CusIcon2,
+                color: Colors.black,
+              ),
+              label: '',
             ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.school,
-              color: Colors.black,
+            BottomNavigationBarItem(
+              icon: Icon(
+                MyFlutterApp.group,
+                color: Colors.black,
+              ),
+              label: '',
             ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.school,
-              color: Colors.black,
+            BottomNavigationBarItem(
+              icon: Icon(
+                MyFlutterApp.vector,
+                color: Colors.black,
+              ),
+              label: '',
             ),
-            label: '',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
-        onTap: _onItemTapped,
-      ),
-    );
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.blue,
+          onTap: _onItemTapped,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 500,
+                  width: 500,
+                  child: GridView.count(
+                    crossAxisSpacing: 10,
+                    crossAxisCount: 3,
+                    children: List<Widget>.generate(5, (index) {
+                      return GridTile(
+                        child: Card(
+                          color: Colors.amber,
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+              ]),
+        ));
   }
 }

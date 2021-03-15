@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'loader.dart';
-//import 'package:static_analyze_av/static_analyze_av.dart';
-//import 'home_screen.dart';
 
 void main() => runApp(MyApp());
 

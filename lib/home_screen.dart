@@ -12,7 +12,11 @@ class HomeScreen extends StatelessWidget {
             elevation: 0,
             title: const Text(
               'Help',
-              style: TextStyle(color: Colors.black, fontSize: 17),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 17,
+                fontFamily: 'SF-Pro',
+              ),
             ),
             actions: [
               IconButton(
@@ -26,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             ]),
         body: Padding(
           padding:
-              const EdgeInsets.only(bottom: 84, top: 24, left: 24, right: 24),
+              const EdgeInsets.only(bottom: 24, top: 24, left: 24, right: 24),
           child: ListView(shrinkWrap: true, children: [
             Container(
               padding: const EdgeInsets.fromLTRB(14.0, 14.0, 14.0, 14.0),
@@ -43,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                 Text(
                   'Автор приложения - топовый блогер Александра Буримова',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 24,
                     fontFamily: 'SF-Pro',
                   ),
                 ),

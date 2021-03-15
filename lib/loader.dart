@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mynewproject/start_screen.dart';
-import 'home_screen.dart';
+import 'start_screen.dart';
+//import 'home_screen.dart';
 
 class LoaderScreen extends StatefulWidget {
   //LoaderScreen(Alignment center);

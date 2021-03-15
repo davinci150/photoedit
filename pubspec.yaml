@@ -1,4 +1,4 @@
-name: mynewproject
+name: Exciter
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -20,11 +20,12 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.7.0 <3.0.0"
 
-dependencies:
+dependencies: 
   
   flutter:
     sdk: flutter
   static_analyze_av: ^0.2.3
+  
   
 
   # The following adds the Cupertino Icons font to your application.
@@ -66,10 +67,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
   fonts:
     - family: SF-Pro
       fonts:
-       - asset: assets/Fonts/SFProDisplay-Medium.ttf
+      - asset: assets/Fonts/SFProDisplay-Medium.ttf
+      
+    - family: MyFlutterApp
+      fonts:
+      - asset: assets/Fonts/MyFlutterApp.ttf
+
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
