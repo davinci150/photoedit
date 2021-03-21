@@ -40,26 +40,26 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.grey[200],
               ),
               child: Column(children: [
-                Image.asset('assets/Rectangle_36.png'),
-                SizedBox(
+                Image.asset('assets/bloggerPhoto.png'),
+                const SizedBox(
                   height: 16,
                 ),
-                Text(
+                const Text(
                   'Автор приложения - топовый блогер Александра Буримова',
                   style: TextStyle(
                     fontSize: 24,
                     fontFamily: 'SF-Pro',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Row(children: [
                   Image.asset('assets/Vector.png', height: 22, width: 22),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text(
+                  const Text(
                     '@burimova',
                     style: TextStyle(
                       fontSize: 24,
@@ -68,17 +68,17 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ]),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
               ]),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             InkWell(
               onTap: () {},
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Поддержка',
                       //style: Theme.of(context).textTheme.headline5,
                       style: TextStyle(
@@ -87,13 +87,13 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Expanded(child: Container()),
-                    Icon(Icons.chevron_right),
+                    const Icon(Icons.chevron_right),
                   ]),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Divider(
+            const Divider(
               color: Colors.grey,
             ),
           ]),
