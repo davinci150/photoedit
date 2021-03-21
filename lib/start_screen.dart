@@ -1,32 +1,18 @@
 import 'package:flutter/material.dart';
+
 import 'home_screen.dart';
 import 'my_flutter_app_icons.dart';
 
 class StartScreen extends StatefulWidget {
-  StartScreen({Key key}) : super(key: key);
-  //static const String _title = 'Flutter Code Sample';
+  const StartScreen({Key key}) : super(key: key);
+
   @override
   _StartScreen createState() => _StartScreen();
 }
 
 class _StartScreen extends State<StartScreen> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-  ];
+  List<String> files = ['', '', '', '', ''];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -56,7 +42,7 @@ class _StartScreen extends State<StartScreen> {
                   Navigator.push<dynamic>(
                       context,
                       MaterialPageRoute<dynamic>(
-                          builder: (context) => HomeScreen()));
+                          builder: (context) => const HomeScreen()));
                 },
               );
             }),
@@ -68,8 +54,6 @@ class _StartScreen extends State<StartScreen> {
                   ),
                   onPressed: () {}),
             ]),
-        /*body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),*/
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -105,27 +89,20 @@ class _StartScreen extends State<StartScreen> {
           selectedItemColor: Colors.blue,
           onTap: _onItemTapped,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 500,
-                  width: 500,
-                  child: GridView.count(
-                    crossAxisSpacing: 10,
-                    crossAxisCount: 3,
-                    children: List<Widget>.generate(5, (index) {
-                      return GridTile(
-                        child: Card(
-                          color: Colors.amber,
-                        ),
-                      );
-                    }),
-                  ),
-                ),
-              ]),
-        ));
+        body: Container(
+          alignment: Alignment.topCenter,
+            child: Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: files.map(_mapFiles).toList(),
+            )));
+  }
+
+  Widget _mapFiles(String file) {
+    return Container(
+      color: Colors.amber,
+      height: 132,
+      width: 105,
+    );
   }
 }
