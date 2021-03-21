@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'start_screen.dart';
-//import 'home_screen.dart';
 
 class LoaderScreen extends StatefulWidget {
-  //LoaderScreen(Alignment center);
   const LoaderScreen({Key key}) : super(key: key);
 
   @override
@@ -13,11 +12,11 @@ class LoaderScreen extends StatefulWidget {
 class _LoaderState extends State<LoaderScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 5000), () {
-      //Navigator.pushNamed(context, HomeScreen());
-      //Navigator.of(context).pushNamed(HomeScreen);
-      Navigator.push<dynamic>(context,
-          MaterialPageRoute<dynamic>(builder: (context) => StartScreen()));
+    Future.delayed(const Duration(milliseconds: 2000), () {
+      Navigator.pushReplacement<dynamic, dynamic>(
+          context,
+          MaterialPageRoute<dynamic>(
+              builder: (context) => const StartScreen()));
     });
     super.initState();
   }
@@ -26,16 +25,13 @@ class _LoaderState extends State<LoaderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      //padding: EdgeInsets.only(left: 130, right: 130, top: 356),
       body: Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(horizontal: 140),
+        padding: const EdgeInsets.only(bottom: 100),
         child: SizedBox(
           width: 210,
           child: Column(
-            //width: MediaQuery.of(context).size.width * 0.9,
             mainAxisAlignment: MainAxisAlignment.center,
-            //mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Image.asset(
                 'assets/ex.png',
@@ -46,9 +42,8 @@ class _LoaderState extends State<LoaderScreen> {
                 height: 10,
               ),
               Image.asset(
-                'assets/exciter1.png',
-                width: 211,
-                height: 75,
+                'assets/exciter_img.png',
+                height: 68,
               ),
               const SizedBox(
                 height: 30,

@@ -14,12 +14,6 @@ class _StartScreen extends State<StartScreen> {
   int _selectedIndex = 0;
   List<String> files = ['', '', '', '', ''];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +49,10 @@ class _StartScreen extends State<StartScreen> {
                   onPressed: () {}),
             ]),
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          selectedIconTheme:const IconThemeData(size: 24),
+          selectedFontSize: 0,
+          unselectedFontSize: 0,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(
@@ -65,21 +63,21 @@ class _StartScreen extends State<StartScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                MyFlutterApp.CusIcon2,
+                MyFlutterApp.editIcon,
                 color: Colors.black,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                MyFlutterApp.group,
+                MyFlutterApp.texturesIcon,
                 color: Colors.black,
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                MyFlutterApp.vector,
+                MyFlutterApp.videoIcon,
                 color: Colors.black,
               ),
               label: '',
@@ -104,5 +102,11 @@ class _StartScreen extends State<StartScreen> {
       height: 132,
       width: 105,
     );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 }
