@@ -11,10 +11,24 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+
+  bloc: ^7.0.0
   cupertino_icons: ^1.0.0
+  device_info: ^2.0.0
+
+  equatable: ^2.0.0
+
+
 
   flutter:
     sdk: flutter
+
+  get_it: ^6.0.0
+
+  image_picker: ^0.7.3
+
+  package_info: ^2.0.0
+
   static_analyze_av: ^0.2.3
 
 dev_dependencies:
