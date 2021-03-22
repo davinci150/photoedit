@@ -8,6 +8,12 @@ abstract class StartScreenEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class StartEvent extends StartScreenEvent {
+  StartEvent({this.fileList});
+
+  final List<RecentPicModel> fileList;
+}
+
 class TapAddImageEvent extends StartScreenEvent {}
 
 class PicImageEvent extends StartScreenEvent {
@@ -15,7 +21,6 @@ class PicImageEvent extends StartScreenEvent {
 
   final RecentPicModel picModel;
 }
-
 
 class SelectImageEvent extends StartScreenEvent {
   SelectImageEvent({this.picModel});

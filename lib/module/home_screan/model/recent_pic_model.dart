@@ -1,11 +1,26 @@
-import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
-class RecentPicModel{
-  const RecentPicModel({@required this.path, @required this.isSelected});
+class RecentPicModel {
+  RecentPicModel({@required this.path, @required this.isSelected});
 
-  final bool isSelected;
-  final String path;
+  RecentPicModel.fromJson(Map<String, dynamic> json) {
+    if ((json['isSelected'] as int) == 1) {
+      isSelected = true;
+    } else {
+      isSelected = false;
+    }
+    path = json['path'] as String;
+  }
+
+  bool isSelected;
+  String path;
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['isSelected'] = isSelected;
+    data['path'] = path;
+    return data;
+  }
 
   RecentPicModel copyWith({
     bool isSelected,
@@ -21,5 +36,4 @@ class RecentPicModel{
       path: patch ?? path,
     );
   }
-
 }
