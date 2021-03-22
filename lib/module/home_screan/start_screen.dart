@@ -56,7 +56,7 @@ class _StartScreen extends State<StartScreenNew> {
             actions: [
               IconButton(
                   icon: const Icon(
-                    Icons.add_circle_outline,
+                    Icons.add,
                     color: Colors.black,
                   ),
                   onPressed: () {
@@ -127,10 +127,9 @@ class _StartScreen extends State<StartScreenNew> {
       child: Container(
         decoration: BoxDecoration(
             border: Border.all(
-              width: 3,
-              color: pic.isSelected ? const Color(0xFF2B83EC) : Colors
-                  .transparent,
-            )),
+          width: 3,
+          color: pic.isSelected ? const Color(0xFF2B83EC) : Colors.transparent,
+        )),
         height: 132,
         width: 100,
         child: Image.file(File(pic.path)),
