@@ -43,14 +43,14 @@ class _StartScreen extends State<StartScreen> {
             actions: [
               IconButton(
                   icon: const Icon(
-                    Icons.add_circle_outline,
-                    color: Colors.black,
+                    Icons.add,
+                    color: Colors.blue,
                   ),
                   onPressed: () {}),
             ]),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          selectedIconTheme:const IconThemeData(size: 24),
+          selectedIconTheme: const IconThemeData(size: 24),
           selectedFontSize: 0,
           unselectedFontSize: 0,
           items: const <BottomNavigationBarItem>[
@@ -88,7 +88,7 @@ class _StartScreen extends State<StartScreen> {
           onTap: _onItemTapped,
         ),
         body: Container(
-          alignment: Alignment.topCenter,
+            alignment: Alignment.topCenter,
             child: Wrap(
               spacing: 10,
               runSpacing: 10,
