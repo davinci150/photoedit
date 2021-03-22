@@ -57,7 +57,7 @@ class _StartScreen extends State<StartScreenNew> {
               IconButton(
                   icon: const Icon(
                     Icons.add,
-                    color: Colors.black,
+                    color: Colors.blue,
                   ),
                   onPressed: () {
                     _bloc.add(TapAddImageEvent());
@@ -71,7 +71,7 @@ class _StartScreen extends State<StartScreenNew> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.home,
+                MyFlutterApp.presetsIcon,
                 color: Colors.black,
               ),
               label: '',
