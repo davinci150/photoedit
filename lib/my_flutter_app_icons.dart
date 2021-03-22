@@ -18,10 +18,8 @@ import 'package:flutter/widgets.dart';
 class MyFlutterApp {
   MyFlutterApp._();
   static const _kFontFam = 'MyFlutterApp';
-  static const IconData editIcon =
-      IconData(0xe800, fontFamily: _kFontFam);
-  static const IconData texturesIcon =
-      IconData(0xe802, fontFamily: _kFontFam);
-  static const IconData videoIcon =
-      IconData(0xe803, fontFamily: _kFontFam);
+  static const IconData editIcon = IconData(0xe800, fontFamily: _kFontFam);
+  static const IconData texturesIcon = IconData(0xe802, fontFamily: _kFontFam);
+  static const IconData videoIcon = IconData(0xe803, fontFamily: _kFontFam);
+  static const IconData presetsIcon = IconData(0xe812, fontFamily: _kFontFam);
 }
