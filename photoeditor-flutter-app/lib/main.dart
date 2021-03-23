@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'core/di/service_locator.dart';
+import 'module/home_screan/start_screen.dart';
 import 'module/start_screen/start_screen.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       // ignore: unnecessary_parenthesis
       title: ('Exciter'),
       //home: PresetsScreen(),
-      home: StartScreen(),
+      home: StartScreenNew(),
     );
   }
 }

@@ -1,5 +1,7 @@
+import 'package:exciter/core/service/database/dao/user_dao.dart';
 import 'package:exciter/module/file_picker/file_picker_bloc.dart';
 
+import '../../module/home_screan/start_screen_bloc.dart';
 import '../service/image_picker/image_picker.dart';
 import '../service/router/router.dart';
 import 'service_locator.dart';
@@ -9,6 +11,11 @@ void setupBlock() {
     ..registerFactory<FilePickerBloc>(() => FilePickerBloc(
           router: getIts<RouterI>(),
           imagePicker: getIts<ImagePickerServiceI>(),
+        ))
+//
+    ..registerFactory<SaveFastingBloc>(() => SaveFastingBloc(
+          router: getIts<RouterI>(),
+          imagePicker: getIts<ImagePickerServiceI>(), recentPicModelDao: getIts<UserDao>(),
         ));
   /*
     ..registerFactory<SignInBlocI>(() => SignInBloc(
