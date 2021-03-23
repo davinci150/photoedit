@@ -9,35 +9,45 @@ class PresetsScreen extends StatefulWidget {
   _PresetsScreenState createState() => _PresetsScreenState();
 }
 
-@override
-Widget filterImage() {
-  return Container(
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.all(
-          Radius.circular(2),
+class Editor extends StatelessWidget {
+  const Editor(
+      {Key key, this.image, this.textFilter, this.color, this.isSelected})
+      : super(key: key);
+  final String image;
+  final String textFilter;
+  final Color color;
+  final bool isSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.all(
+            Radius.circular(2),
+          ),
         ),
-      ),
-      height: 68,
-      width: 60,
-      child: Stack(alignment: Alignment.bottomCenter, children: [
-        Image.asset(
-          'assets/original_filter_image.png',
-        ),
-        Container(
-          width: 60,
-          height: 18,
-          color: Colors.grey,
-          child: Center(
-            child: Text(
-              'Original',
-              style: TextStyle(
-                color: Colors.white,
+        height: 68,
+        width: 60,
+        child: Stack(alignment: Alignment.bottomCenter, children: [
+          Image.asset(
+            image,
+          ),
+          Container(
+            width: 60,
+            height: 18,
+            color: color,
+            child: Center(
+              child: Text(
+                textFilter,
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-        ),
-      ]));
+        ]));
+  }
 }
 
 class _PresetsScreenState extends State<PresetsScreen> {
@@ -53,259 +63,48 @@ class _PresetsScreenState extends State<PresetsScreen> {
           height: 60,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: [
-              filterImage(),
-              filterImage(),
-              filterImage(),
-              filterImage(),
-              filterImage(),
-              /*Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/original_filter_image.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.grey,
-                      child: Center(
-                        child: Text(
-                          'Original',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    //color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'Fresh',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    //color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'Fresh',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    //color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'Fresh',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    //color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'Fresh',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    //color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.orange,
-                      child: Center(
-                        child: Text(
-                          'Fresh',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    //color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.red,
-                      child: Center(
-                        child: Text(
-                          'Vintage',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.green[300],
-                      child: Center(
-                        child: Text(
-                          'Mood',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),
-              Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(2),
-                    ),
-                  ),
-                  height: 68,
-                  width: 60,
-                  child: Stack(alignment: Alignment.bottomCenter, children: [
-                    Image.asset(
-                      'assets/testImage.png',
-                    ),
-                    Container(
-                      width: 60,
-                      height: 18,
-                      color: Colors.green,
-                      child: Center(
-                        child: Text(
-                          'Natural',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ])),*/
+            children: <Widget>[
+              const Editor(
+                  image: 'assets/original_filter_image.png',
+                  textFilter: 'Original',
+                  color: Colors.grey,
+                  isSelected: true),
+              const SizedBox(
+                width: 12,
+              ),
+              const Editor(
+                  image: 'assets/fresh_filter_image.png',
+                  textFilter: 'Fresh',
+                  color: Colors.orange,
+                  isSelected: true),
+              const SizedBox(
+                width: 12,
+              ),
+              const Editor(
+                  image: 'assets/vintage_filter_image.png',
+                  textFilter: 'Vintage',
+                  color: Colors.red,
+                  isSelected: true),
+              const SizedBox(
+                width: 12,
+              ),
+              const Editor(
+                  image: 'assets/mood_filter_image.png',
+                  textFilter: 'Mood',
+                  color: Colors.green,
+                  isSelected: true),
+              const SizedBox(
+                width: 12,
+              ),
+              const Editor(
+                  image: 'assets/natural_filter_image.png',
+                  textFilter: 'Natural',
+                  color: Colors.green,
+                  isSelected: true),
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 16,
         )
       ],
