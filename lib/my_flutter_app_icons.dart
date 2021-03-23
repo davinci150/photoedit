@@ -21,5 +21,13 @@ class MyFlutterApp {
   static const IconData editIcon = IconData(0xe806, fontFamily: _kFontFam);
   static const IconData texturesIcon = IconData(0xe804, fontFamily: _kFontFam);
   static const IconData videoIcon = IconData(0xe805, fontFamily: _kFontFam);
-  static const IconData presetsIcon = IconData(0xe812, fontFamily: _kFontFam);
+  static const IconData presetsIcon = IconData(0xe807, fontFamily: _kFontFam);
+  static const IconData colourIcon = IconData(0xe809, fontFamily: _kFontFam);
+  static const IconData temperatureIcon =
+      IconData(0xe80a, fontFamily: _kFontFam);
+  static const IconData saturationIcon =
+      IconData(0xe80b, fontFamily: _kFontFam);
+  static const IconData shadowsIcon = IconData(0xe80c, fontFamily: _kFontFam);
+  static const IconData contrastIcon = IconData(0xe80d, fontFamily: _kFontFam);
+  static const IconData lightIcon = IconData(0xe80e, fontFamily: _kFontFam);
 }

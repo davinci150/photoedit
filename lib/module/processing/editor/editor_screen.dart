@@ -1,43 +1,53 @@
+import 'package:exciter/my_flutter_app_icons.dart';
 import 'package:flutter/material.dart';
 
 class EditorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: 500,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [
-          Container(
-              height: 60, width: 100, child: const Icon(Icons.access_alarm)),
-          Container(
-            height: 60,
-            width: 100,
-            child: const Icon(Icons.accessibility_rounded),
+    return Column(
+      children: [
+        Expanded(child: Container()),
+        SizedBox(
+          height: 60,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              Container(
+                height: 60,
+                width: 80,
+                child: const Icon(MyFlutterApp.colourIcon),
+              ),
+              Container(
+                height: 60,
+                width: 80,
+                child: const Icon(MyFlutterApp.lightIcon),
+              ),
+              Container(
+                height: 60,
+                width: 80,
+                child: const Icon(MyFlutterApp.contrastIcon),
+              ),
+              Container(
+                height: 60,
+                width: 80,
+                child: const Icon(MyFlutterApp.shadowsIcon),
+              ),
+              Container(
+                height: 60,
+                width: 80,
+                child: const Icon(MyFlutterApp.saturationIcon),
+              ),
+              Container(
+                  height: 60,
+                  width: 80,
+                  child: const Icon(MyFlutterApp.temperatureIcon)),
+            ],
           ),
-          Container(
-            height: 60,
-            width: 100,
-            child: const Icon(Icons.access_alarm),
-          ),
-          Container(
-            height: 60,
-            width: 100,
-            child: const Icon(Icons.ac_unit),
-          ),
-          Container(
-            height: 60,
-            width: 100,
-            child: const Icon(Icons.hail),
-          ),
-          Container(
-            height: 60,
-            width: 100,
-            child: const Icon(Icons.home),
-          ),
-        ],
-      ),
+        ),
+        const SizedBox(
+          height: 16,
+        )
+      ],
     );
   }
 }
