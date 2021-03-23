@@ -108,3 +108,4 @@ app.*.map.json
 /.idea/shelf/
 /android/.idea/compiler.xml
 /.fvm/
+/android/.idea/libraries/
