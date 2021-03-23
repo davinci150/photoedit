@@ -40,7 +40,7 @@ class AboutScreen extends StatelessWidget {
                 color: Colors.grey[200],
               ),
               child: Column(children: [
-                Image.asset('assets/bloggerPhoto.png'),
+                Image.asset('assets/blogger_photo.png'),
                 const SizedBox(
                   height: 16,
                 ),
@@ -55,7 +55,8 @@ class AboutScreen extends StatelessWidget {
                   height: 40,
                 ),
                 Row(children: [
-                  Image.asset('assets/Vector.png', height: 22, width: 22),
+                  Image.asset('assets/instagramm_image.png',
+                      height: 22, width: 22),
                   const SizedBox(
                     width: 10,
                   ),

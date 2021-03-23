@@ -1,10 +1,43 @@
 import 'package:flutter/material.dart';
 
 class PresetsScreen extends StatefulWidget {
-  const PresetsScreen({Key key}) : super(key: key);
+  const PresetsScreen({
+    Key key,
+  }) : super(key: key);
 
   @override
   _PresetsScreenState createState() => _PresetsScreenState();
+}
+
+@override
+Widget filterImage() {
+  return Container(
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.all(
+          Radius.circular(2),
+        ),
+      ),
+      height: 68,
+      width: 60,
+      child: Stack(alignment: Alignment.bottomCenter, children: [
+        Image.asset(
+          'assets/original_filter_image.png',
+        ),
+        Container(
+          width: 60,
+          height: 18,
+          color: Colors.grey,
+          child: Center(
+            child: Text(
+              'Original',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ]));
 }
 
 class _PresetsScreenState extends State<PresetsScreen> {
@@ -12,13 +45,21 @@ class _PresetsScreenState extends State<PresetsScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: Container(color: Colors.grey,)),
+        Expanded(
+            child: Container(
+          color: Colors.grey,
+        )),
         SizedBox(
           height: 60,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              Container(
+              filterImage(),
+              filterImage(),
+              filterImage(),
+              filterImage(),
+              filterImage(),
+              /*Container(
                   decoration: BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.all(
@@ -29,7 +70,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                   width: 60,
                   child: Stack(alignment: Alignment.bottomCenter, children: [
                     Image.asset(
-                      'assets/testImage.png',
+                      'assets/original_filter_image.png',
                     ),
                     Container(
                       width: 60,
@@ -260,11 +301,13 @@ class _PresetsScreenState extends State<PresetsScreen> {
                         ),
                       ),
                     ),
-                  ])),
+                  ])),*/
             ],
           ),
         ),
-        SizedBox(height: 16,)
+        SizedBox(
+          height: 16,
+        )
       ],
     );
   }
