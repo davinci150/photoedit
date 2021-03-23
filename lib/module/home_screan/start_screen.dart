@@ -3,21 +3,21 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../home_screen.dart';
+import '../about/about_screen.dart';
 import '../../my_flutter_app_icons.dart';
 import 'model/recent_pic_model.dart';
 import 'start_screen_bloc.dart';
 import 'start_screen_event.dart';
 import 'start_screen_state.dart';
 
-class StartScreenNew extends StatefulWidget {
-  const StartScreenNew({Key key}) : super(key: key);
+class StartScreen extends StatefulWidget {
+  const StartScreen({Key key}) : super(key: key);
 
   @override
   _StartScreen createState() => _StartScreen();
 }
 
-class _StartScreen extends State<StartScreenNew> {
+class _StartScreen extends State<StartScreen> {
   int _selectedIndex = 0;
   SaveFastingBloc _bloc;
 
@@ -49,7 +49,7 @@ class _StartScreen extends State<StartScreenNew> {
                   Navigator.push<dynamic>(
                       context,
                       MaterialPageRoute<dynamic>(
-                          builder: (context) => const HomeScreen()));
+                          builder: (context) => const AboutScreen()));
                 },
               );
             }),

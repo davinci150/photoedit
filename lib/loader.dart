@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'start_screen.dart';
+import 'module/home_screan/start_screen.dart';
 
 class LoaderScreen extends StatefulWidget {
   const LoaderScreen({Key key}) : super(key: key);
