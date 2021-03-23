@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:my" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="54372aff-bad9-45c0-b36c-e8bd1c983c39" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/fonts/MyFlutterApp.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/di/setup_repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/file_picker/file_picker_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/file_picker/model/recent_pic_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/procecing/processing_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/procecing/texture/texture_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/procecing/video/video_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/start_screen/start_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/video/texture_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/.idea/runConfigurations/main_dart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/com/example/mynewproject/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/kotlin/com/example/mynewproject/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/res/drawable/launch_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Vector.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/Vector.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bloggerPhoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/bloggerPhoto.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/exImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/exImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/exciter_img.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/exciter_img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/MyFlutterApp.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/SFProDisplay-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/fonts/SFProDisplay-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/fonts/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/testImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/assets/testImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/ios/Runner/Runner-Bridging-Header.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/di/service_locator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/di/service_locator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/di/setup_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/di/setup_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/di/setup_core.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/di/setup_core.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/di/setup_repository.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/di/setup_storage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/di/setup_storage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/navigation/animated_page_route_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/navigation/animated_page_route_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/navigation/route_argument.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/navigation/route_argument.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/navigation/route_generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/navigation/route_generator.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/build_info_provider/build_info_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/build_info_provider/build_info_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/context_provider/context_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/context_provider/context_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/context_provider/context_provider_i.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/context_provider/context_provider_i.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/crash_report/crash_report.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/crash_report/crash_report.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/database/dao/user_dao.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/database/helper.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/environment_config/environment_config_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/environment_config/environment_config_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/environment_config/environment_config_provider_i.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/environment_config/environment_config_provider_i.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/image_picker/image_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/image_picker/image_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/logger/logger_provider_i.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/logger/logger_provider_i.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/router/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/router/router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/validator/text_validator_i.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/validator/text_validator_i.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/core/service/validator/text_validators.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/core/service/validator/text_validators.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/edit_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/procecing/editor/editor_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/about/about_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/loader.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/splash/loader.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/module/home_screan/model/recent_pic_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/module/home_screan/start_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/module/home_screan/start_screen_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/file_picker/file_picker_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/module/home_screan/start_screen_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/file_picker/file_picker_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/module/home_screan/start_screen_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/file_picker/file_picker_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/module/temp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/my_flutter_app_icons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/my_flutter_app_icons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presets_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/lib/module/procecing/presets/presets_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/start_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/photoeditor-flutter-app/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testrep" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="release" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1q92RXWNeuoje2NSCdITDPgqDYg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/photoeditor-flutter-app/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter.main.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="54372aff-bad9-45c0-b36c-e8bd1c983c39" name="Default Changelist" comment="" />
+      <created>1616477477457</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616477477457</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="315" y="23" key="CommitChangelistDialog2" timestamp="1616477144182">
+      <screen x="0" y="23" width="1504" height="823" />
+    </state>
+    <state x="315" y="23" key="CommitChangelistDialog2/0.23.1504.823@0.23.1504.823" timestamp="1616477144182" />
+    <state x="354" y="123" width="964" height="623" key="DiffContextDialog" timestamp="1616477328300">
+      <screen x="0" y="23" width="1504" height="823" />
+    </state>
+    <state x="354" y="123" width="964" height="623" key="DiffContextDialog/0.23.1504.823@0.23.1504.823" timestamp="1616477328300" />
+    <state width="1122" height="116" key="GridCell.Tab.0.bottom" timestamp="1616477328247">
+      <screen x="0" y="23" width="1504" height="823" />
+    </state>
+    <state width="1122" height="116" key="GridCell.Tab.0.bottom/0.23.1504.823@0.23.1504.823" timestamp="1616477328247" />
+    <state width="1122" height="116" key="GridCell.Tab.0.center" timestamp="1616477328245">
+      <screen x="0" y="23" width="1504" height="823" />
+    </state>
+    <state width="1122" height="116" key="GridCell.Tab.0.center/0.23.1504.823@0.23.1504.823" timestamp="1616477328245" />
+    <state width="1122" height="116" key="GridCell.Tab.0.left" timestamp="1616477328226">
+      <screen x="0" y="23" width="1504" height="823" />
+    </state>
+    <state width="1122" height="116" key="GridCell.Tab.0.left/0.23.1504.823@0.23.1504.823" timestamp="1616477328226" />
+    <state width="1122" height="116" key="GridCell.Tab.0.right" timestamp="1616477328246">
+      <screen x="0" y="23" width="1504" height="823" />
+    </state>
+    <state width="1122" height="116" key="GridCell.Tab.0.right/0.23.1504.823@0.23.1504.823" timestamp="1616477328246" />
+    <state x="278" y="123" width="1040" height="623" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1616477598019">
+      <screen x="0" y="23" width="1504" height="823" />
+    </state>
+    <state x="278" y="123" width="1040" height="623" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1504.823@0.23.1504.823" timestamp="1616477598019" />
+  </component>
+</project>
