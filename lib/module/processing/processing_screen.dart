@@ -37,7 +37,7 @@ class _StartScreen extends State<ProcessingScreen> {
           backgroundColor: Colors.white,
           elevation: 0,
           title: const Text(
-            'Recent11',
+            'Recent',
             style: TextStyle(
                 color: Colors.black, fontSize: 17, fontFamily: 'SF-Pro'),
           ),
