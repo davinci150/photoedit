@@ -30,4 +30,5 @@ class MyFlutterApp {
   static const IconData shadowsIcon = IconData(0xe80c, fontFamily: _kFontFam);
   static const IconData contrastIcon = IconData(0xe80d, fontFamily: _kFontFam);
   static const IconData lightIcon = IconData(0xe80e, fontFamily: _kFontFam);
+  static const IconData lockIcon = IconData(0xe80f, fontFamily: _kFontFam);
 }

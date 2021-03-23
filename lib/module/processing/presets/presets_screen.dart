@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../my_flutter_app_icons.dart';
+
 class PresetsScreen extends StatefulWidget {
   const PresetsScreen({
     Key key,
@@ -32,6 +34,20 @@ class Editor extends StatelessWidget {
         child: Stack(alignment: Alignment.bottomCenter, children: [
           Image.asset(
             image,
+          ),
+          Visibility(
+            visible: isSelected,
+            child: Padding(
+                padding: EdgeInsets.only(
+                  bottom: 22,
+                  left: 30,
+                ),
+                child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 12,
+                    child: Icon(
+                      MyFlutterApp.lockIcon,
+                    ))),
           ),
           Container(
             width: 60,
@@ -68,7 +84,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                   image: 'assets/original_filter_image.png',
                   textFilter: 'Original',
                   color: Colors.grey,
-                  isSelected: true),
+                  isSelected: false),
               const SizedBox(
                 width: 12,
               ),
@@ -76,7 +92,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                   image: 'assets/fresh_filter_image.png',
                   textFilter: 'Fresh',
                   color: Colors.orange,
-                  isSelected: true),
+                  isSelected: false),
               const SizedBox(
                 width: 12,
               ),
@@ -84,7 +100,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                   image: 'assets/vintage_filter_image.png',
                   textFilter: 'Vintage',
                   color: Colors.red,
-                  isSelected: true),
+                  isSelected: false),
               const SizedBox(
                 width: 12,
               ),
