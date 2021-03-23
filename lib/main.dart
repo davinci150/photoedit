@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'core/di/service_locator.dart';
 import 'module/home_screan/start_screen.dart';
-import 'presets_screen.dart';
 
 void main() {
   setupLocator();
@@ -16,7 +15,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       // ignore: unnecessary_parenthesis
       title: ('Exciter'),
-      //home: PresetsScreen(),
       home: StartScreen(),
     );
   }
