@@ -22,49 +22,44 @@ class Editor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: const BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.all(
-            Radius.circular(2),
+    return Stack(children: <Widget>[
+      Image.asset(
+        image,
+        fit: BoxFit.fill,
+        width: 60.0,
+        height: 60.0,
+      ),
+      Container(
+        child: Container(
+          child: Text(
+            textFilter,
+            style: TextStyle(fontSize: 14.0, color: Colors.white),
           ),
+          color: color,
+          padding: const EdgeInsets.all(0.0),
+          alignment: Alignment.center,
+          width: 60,
+          height: 18.0,
         ),
-        height: 80,
-        width: 60,
-        child: Stack(alignment: Alignment.bottomCenter, children: [
-          Image.asset(
-            image,
-
+        padding: const EdgeInsets.all(0.0),
+        alignment: Alignment.bottomCenter,
+      ),
+      Visibility(
+        visible: isSelected,
+        child: const Padding(
+          padding: EdgeInsets.only(
+            top: 15,
+            left: 30,
           ),
-          Visibility(
-            visible: isSelected,
-            child: const Padding(
-                padding: EdgeInsets.only(
-                  bottom: 22,
-                  left: 30,
-                ),
-                child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 12,
-                    child: Icon(
-                      MyFlutterApp.lockIcon,
-                    ))),
-          ),
-          Container(
-            width: 60,
-            height: 18,
-            color: color,
-            child: Center(
-              child: Text(
-                textFilter,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12
-                ),
-              ),
-            ),
-          ),
-        ]));
+          child: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 12,
+              child: Icon(
+                MyFlutterApp.lockIcon,
+              )),
+        ),
+      )
+    ]);
   }
 }
 
@@ -84,7 +79,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
           height: 60,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: const <Widget> [
+            children: const <Widget>[
               Editor(
                   image: 'assets/original_filter_image.png',
                   textFilter: 'Original',

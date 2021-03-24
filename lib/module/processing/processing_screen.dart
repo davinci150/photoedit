@@ -22,10 +22,10 @@ class _StartScreen extends State<ProcessingScreen> {
   }
 
   final List<RecentTab> _children = [
-    RecentTab(title: 'Recent', tabWidget: const PresetsScreen()),
-    RecentTab(title: 'Recent1', tabWidget: EditorScreen()),
-    RecentTab(title: 'Recent2', tabWidget: const TextureScreen()),
-    RecentTab(title: 'Recent3', tabWidget: const TextureScreen())
+    RecentTab(title: 'Present', tabWidget: const PresetsScreen()),
+    RecentTab(title: 'Edit', tabWidget: EditorScreen()),
+    RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
+    RecentTab(title: 'Video Effects', tabWidget: const TextureScreen())
   ];
 
   @override
