@@ -13,24 +13,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      darkTheme: ThemeData(
+      //darkTheme:
+      theme:
+          //
+          ThemeData(
         // Define the default brightness and colors.
+        primaryColor: Colors.black,
+        primaryColorBrightness: Brightness.dark,
+        primaryColorLight: Colors.black,
         brightness: Brightness.dark,
+        primaryColorDark: Colors.black,
+        indicatorColor: Colors.white,
+        canvasColor: Colors.black,
 
         //active taped elements
         accentColor: const Color(0xFF2B83EC),
-
         //disable icon
         iconTheme: const IconThemeData(color: Color(0xFF959595)),
-
         //enable icon
-        primaryIconTheme: const IconThemeData(color: Color(0xFF0F0F0F)),
+        primaryIconTheme: const IconThemeData(color: Colors.white),
 
         fontFamily: 'Georgia',
       ),
-      theme: ThemeData(
+      darkTheme:
+      //theme:
+      //
+      ThemeData(
         // Define the default brightness and colors.
         brightness: Brightness.light,
+        primaryColor: Colors.white,
 
         //active taped elements
         accentColor: const Color(0xFF2B83EC),
@@ -39,7 +50,9 @@ class MyApp extends StatelessWidget {
         iconTheme: const IconThemeData(color: Color(0xFF959595)),
 
         //enable icon
-        primaryIconTheme: const IconThemeData(color: Color(0xFF0F0F0F)),
+
+        primaryTextTheme:
+            TextTheme(headline1: const TextStyle(color: Colors.white)),
 
         fontFamily: 'Georgia',
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../home_screan/start_screen.dart';
+import '../presentation/fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key key}) : super(key: key);
@@ -24,7 +25,6 @@ class _LoaderState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.only(bottom: 100),
@@ -41,16 +41,23 @@ class _LoaderState extends State<SplashScreen> {
               const SizedBox(
                 height: 10,
               ),
-              Image.asset(
+              const Text(
+                'exciter',
+                style: TextStyle(
+                    fontSize: 56,
+                    fontFamily: AppFonts.montserrat,
+                    fontWeight: FontWeight.w300),
+              ),
+              /*Image.asset(
                 'assets/exciter_img.png',
                 height: 68,
-              ),
+              ),*/
               const SizedBox(
                 height: 30,
               ),
               const LinearProgressIndicator(
-                backgroundColor: Colors.grey,
-              ),
+                  //backgroundColor: Colors.grey,
+                  ),
             ],
           ),
         ),

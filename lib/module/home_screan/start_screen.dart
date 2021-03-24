@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:exciter/module/presentation/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -38,7 +39,6 @@ class _StartScreen extends State<StartScreen> {
           if (snapshot.data == null) {
             return const SizedBox.shrink();
           }
-
           bool isSelected = false;
           snapshot.data.fileList.forEach((element) {
             if (element.isSelected == true) {
@@ -54,20 +54,20 @@ class _StartScreen extends State<StartScreen> {
           return Scaffold(
               appBar: AppBar(
                   centerTitle: true,
-                  backgroundColor: Colors.white,
+                  //backgroundColor: Colors.white,
                   elevation: 0,
                   title: const Text(
                     'Recent',
                     style: TextStyle(
-                        color: Colors.black,
                         fontSize: 17,
-                        fontFamily: 'SF-Pro'),
+                        fontFamily: AppFonts.sfPro,
+                        fontWeight: FontWeight.w400),
                   ),
                   leading: Builder(builder: (BuildContext context) {
                     return IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.error_outline,
-                        color: Colors.black,
+                        color: Theme.of(context).primaryIconTheme.color,
                       ),
                       onPressed: () {
                         Navigator.push<dynamic>(
