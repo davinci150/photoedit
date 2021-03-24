@@ -84,7 +84,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
         SizedBox(
           height: 60,
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 7),
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: const <Widget>[
