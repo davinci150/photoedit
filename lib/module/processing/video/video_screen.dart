@@ -10,6 +10,6 @@ class VideoScreen extends StatefulWidget {
 class _VideoScreenState extends State<VideoScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Text('VideoScreen');
+    return const Center(child: Text('VideoScreen'));
   }
 }

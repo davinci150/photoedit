@@ -10,6 +10,6 @@ class TextureScreen extends StatefulWidget {
 class _TextureScreenState extends State<TextureScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Text('TextureScreen');
+    return const Center(child: Text('TextureScreen'));
   }
 }

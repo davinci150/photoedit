@@ -7,7 +7,7 @@ import 'service_locator.dart';
 void setupBlock() {
   sl
     ..registerFactory<SaveFastingBloc>(() => SaveFastingBloc(
-          recentPicModelDao: getIts<UserDao>(),
+          recentPicModelDao: getIts<RecentPicDao>(),
           router: getIts<RouterI>(),
           imagePicker: getIts<ImagePickerServiceI>(),
         ));

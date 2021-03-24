@@ -18,7 +18,7 @@ class SaveFastingBloc extends Bloc<StartScreenEvent, StartScreenState> {
     @required this.router,
     @required this.imagePicker,
   }) : super(const StartScreenState()) {
-    recentPicModelDao.getRecentPic().then((value) {
+    recentPicModelDao.filterRecentPic().then((value) {
       _fileList = value;
       add(StartEvent(fileList: _fileList));
     });
@@ -27,7 +27,7 @@ class SaveFastingBloc extends Bloc<StartScreenEvent, StartScreenState> {
   List<RecentPicModel> _fileList = [];
   final RouterI router;
   final ImagePickerServiceI imagePicker;
-  final UserDao recentPicModelDao;
+  final RecentPicDao recentPicModelDao;
 
   void getFile() {
     imagePicker.pickImage().then((File file) {

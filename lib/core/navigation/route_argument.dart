@@ -1,9 +1,9 @@
 class RouteArgument {
+  RouteArgument({this.id, this.tag, this.param});
+
   int id;
   String tag;
   dynamic param;
-
-  RouteArgument({this.id, this.tag, this.param});
 
   @override
   String toString() {

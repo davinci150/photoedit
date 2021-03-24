@@ -28,96 +28,113 @@ class _StartScreen extends State<StartScreen> {
     super.initState();
   }
 
+  Color _bottomBarIconsColor = const Color(0xFF959595);
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.white,
-            elevation: 0,
-            title: const Text(
-              'Recent',
-              style: TextStyle(
-                  color: Colors.black, fontSize: 17, fontFamily: 'SF-Pro'),
-            ),
-            leading: Builder(builder: (BuildContext context) {
-              return IconButton(
-                icon: const Icon(
-                  Icons.error_outline,
-                  color: Colors.black,
-                ),
-                onPressed: () {
-                  Navigator.push<dynamic>(
-                      context,
-                      MaterialPageRoute<dynamic>(
-                          builder: (context) => const AboutScreen()));
-                },
-              );
-            }),
-            actions: [
-              IconButton(
-                  icon: const Icon(
-                    Icons.add,
-                    color: Colors.blue,
+    return StreamBuilder<StartScreenState>(
+        stream: _bloc.stream,
+        builder: (context, snapshot) {
+          if (snapshot.data == null) {
+            return const SizedBox.shrink();
+          }
+
+          bool isSelected = false;
+          snapshot.data.fileList.forEach((element) {
+            if (element.isSelected == true) {
+              isSelected = true;
+            }
+          });
+
+          if (isSelected) {
+            _bottomBarIconsColor = Colors.black;
+          } else {
+            _bottomBarIconsColor = const Color(0xFF959595);
+          }
+          return Scaffold(
+              appBar: AppBar(
+                  centerTitle: true,
+                  backgroundColor: Colors.white,
+                  elevation: 0,
+                  title: const Text(
+                    'Recent',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
+                        fontFamily: 'SF-Pro'),
                   ),
-                  onPressed: () {
-                    _bloc.add(TapAddImageEvent());
+                  leading: Builder(builder: (BuildContext context) {
+                    return IconButton(
+                      icon: const Icon(
+                        Icons.error_outline,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {
+                        Navigator.push<dynamic>(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                                builder: (context) => const AboutScreen()));
+                      },
+                    );
                   }),
-            ]),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          selectedIconTheme: const IconThemeData(size: 24),
-          selectedFontSize: 0,
-          unselectedFontSize: 0,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                MyFlutterApp.presetsIcon,
-                color: Colors.black,
+                  actions: [
+                    IconButton(
+                        icon: const Icon(
+                          Icons.add,
+                          color: Colors.blue,
+                        ),
+                        onPressed: () {
+                          _bloc.add(TapAddImageEvent());
+                        }),
+                  ]),
+              bottomNavigationBar: BottomNavigationBar(
+                type: BottomNavigationBarType.fixed,
+                selectedIconTheme: const IconThemeData(size: 24),
+                selectedFontSize: 0,
+                unselectedFontSize: 0,
+                items: <BottomNavigationBarItem>[
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      MyFlutterApp.presetsIcon,
+                      color: _bottomBarIconsColor,
+                    ),
+                    label: '',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      MyFlutterApp.editIcon,
+                      color: _bottomBarIconsColor,
+                    ),
+                    label: '',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      MyFlutterApp.texturesIcon,
+                      color: _bottomBarIconsColor,
+                    ),
+                    label: '',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      MyFlutterApp.videoIcon,
+                      color: _bottomBarIconsColor,
+                    ),
+                    label: '',
+                  ),
+                ],
+                currentIndex: _selectedIndex,
+                selectedItemColor: Colors.blue,
+                onTap: isSelected ? _onItemTapped : null,
               ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                MyFlutterApp.editIcon,
-                color: Colors.black,
-              ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                MyFlutterApp.texturesIcon,
-                color: Colors.black,
-              ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                MyFlutterApp.videoIcon,
-                color: Colors.black,
-              ),
-              label: '',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.blue,
-          onTap: _onItemTapped,
-        ),
-        body: StreamBuilder<StartScreenState>(
-            stream: _bloc.stream,
-            builder: (context, snapshot) {
-              if (snapshot.data == null) {
-                return const SizedBox.shrink();
-              }
-              return Container(
+              body: Container(
                   alignment: Alignment.topLeft,
                   padding: const EdgeInsets.all(16),
                   child: Wrap(
                     spacing: 10,
                     runSpacing: 10,
                     children: snapshot.data.fileList.map(_mapFiles).toList(),
-                  ));
-            }));
+                  )));
+        });
   }
 
   Widget _mapFiles(RecentPicModel pic) {
