@@ -5,7 +5,6 @@ import '../about/about_screen.dart';
 import 'editor/editor_screen.dart';
 import 'presets/presets_screen.dart';
 import 'texture/texture_screen.dart';
-import 'video/video_screen.dart';
 
 class ProcessingScreen extends StatefulWidget {
   const ProcessingScreen({Key key}) : super(key: key);
@@ -22,11 +21,11 @@ class _StartScreen extends State<ProcessingScreen> {
     super.initState();
   }
 
-  final List<Widget> _children = [
-    const PresetsScreen(),
-    EditorScreen(),
-    const TextureScreen(),
-    const VideoScreen()
+  final List<RecentTab> _children = [
+    RecentTab(title: 'Recent', tabWidget: const PresetsScreen()),
+    RecentTab(title: 'Recent1', tabWidget: EditorScreen()),
+    RecentTab(title: 'Recent2', tabWidget: const TextureScreen()),
+    RecentTab(title: 'Recent3', tabWidget: const TextureScreen())
   ];
 
   @override
@@ -36,9 +35,9 @@ class _StartScreen extends State<ProcessingScreen> {
           centerTitle: true,
           backgroundColor: Colors.white,
           elevation: 0,
-          title: const Text(
-            'Recent',
-            style: TextStyle(
+          title: Text(
+            _children[_selectedPage].title,
+            style: const TextStyle(
                 color: Colors.black, fontSize: 17, fontFamily: 'SF-Pro'),
           ),
           leading: Builder(builder: (BuildContext context) {
@@ -104,7 +103,7 @@ class _StartScreen extends State<ProcessingScreen> {
         selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
-      body: _children[_selectedPage],
+      body: _children[_selectedPage].tabWidget,
     );
   }
 
@@ -113,4 +112,11 @@ class _StartScreen extends State<ProcessingScreen> {
       _selectedPage = index;
     });
   }
+}
+
+class RecentTab {
+  RecentTab({this.title, this.tabWidget});
+
+  final String title;
+  final Widget tabWidget;
 }
