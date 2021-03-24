@@ -30,19 +30,25 @@ class Editor extends StatelessWidget {
         height: 60.0,
       ),
       Container(
+        padding: const EdgeInsets.all(0.0),
+        alignment: Alignment.bottomCenter,
         child: Container(
-          child: Text(
-            textFilter,
-            style: TextStyle(fontSize: 14.0, color: Colors.white),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(3),
+                bottomRight: Radius.circular(3)),
+            color: color,
           ),
-          color: color,
           padding: const EdgeInsets.all(0.0),
           alignment: Alignment.center,
           width: 60,
           height: 18.0,
+          child: Text(
+            textFilter,
+            style: const TextStyle(
+                fontSize: 14.0, color: Colors.white, fontFamily: 'SF-Pro'),
+          ),
         ),
-        padding: const EdgeInsets.all(0.0),
-        alignment: Alignment.bottomCenter,
       ),
       Visibility(
         visible: isSelected,
@@ -77,47 +83,50 @@ class _PresetsScreenState extends State<PresetsScreen> {
         ),
         SizedBox(
           height: 60,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: const <Widget>[
-              Editor(
-                  image: 'assets/original_filter_image.png',
-                  textFilter: 'Original',
-                  color: Colors.grey,
-                  isSelected: false),
-              SizedBox(
-                width: 12,
-              ),
-              Editor(
-                  image: 'assets/fresh_filter_image.png',
-                  textFilter: 'Fresh',
-                  color: Colors.orange,
-                  isSelected: false),
-              SizedBox(
-                width: 12,
-              ),
-              Editor(
-                  image: 'assets/vintage_filter_image.png',
-                  textFilter: 'Vintage',
-                  color: Colors.red,
-                  isSelected: false),
-              SizedBox(
-                width: 12,
-              ),
-              Editor(
-                  image: 'assets/mood_filter_image.png',
-                  textFilter: 'Mood',
-                  color: Colors.green,
-                  isSelected: true),
-              SizedBox(
-                width: 12,
-              ),
-              Editor(
-                  image: 'assets/natural_filter_image.png',
-                  textFilter: 'Natural',
-                  color: Colors.green,
-                  isSelected: true),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 7),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: const <Widget>[
+                Editor(
+                    image: 'assets/original_filter_image.png',
+                    textFilter: 'Original',
+                    color: Colors.grey,
+                    isSelected: false),
+                SizedBox(
+                  width: 12,
+                ),
+                Editor(
+                    image: 'assets/fresh_filter_image.png',
+                    textFilter: 'Fresh',
+                    color: Colors.orange,
+                    isSelected: false),
+                SizedBox(
+                  width: 12,
+                ),
+                Editor(
+                    image: 'assets/vintage_filter_image.png',
+                    textFilter: 'Vintage',
+                    color: Colors.red,
+                    isSelected: false),
+                SizedBox(
+                  width: 12,
+                ),
+                Editor(
+                    image: 'assets/mood_filter_image.png',
+                    textFilter: 'Mood',
+                    color: Colors.green,
+                    isSelected: true),
+                SizedBox(
+                  width: 12,
+                ),
+                Editor(
+                    image: 'assets/natural_filter_image.png',
+                    textFilter: 'Natural',
+                    color: Colors.green,
+                    isSelected: true),
+              ],
+            ),
           ),
         ),
         const SizedBox(

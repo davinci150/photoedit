@@ -5,6 +5,7 @@ import '../about/about_screen.dart';
 import 'editor/editor_screen.dart';
 import 'presets/presets_screen.dart';
 import 'texture/texture_screen.dart';
+import 'video/video_screen.dart';
 
 class ProcessingScreen extends StatefulWidget {
   const ProcessingScreen({Key key}) : super(key: key);
@@ -25,7 +26,7 @@ class _StartScreen extends State<ProcessingScreen> {
     RecentTab(title: 'Present', tabWidget: const PresetsScreen()),
     RecentTab(title: 'Edit', tabWidget: EditorScreen()),
     RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
-    RecentTab(title: 'Video Effects', tabWidget: const TextureScreen())
+    RecentTab(title: 'Video Effects', tabWidget: const VideoScreen())
   ];
 
   @override
@@ -82,21 +83,27 @@ class _StartScreen extends State<ProcessingScreen> {
           BottomNavigationBarItem(
             icon: Icon(
               MyFlutterApp.editIcon,
-              color: Colors.black,
+              color: _selectedPage == 1
+                  ? Theme.of(context).accentColor
+                  : Theme.of(context).primaryIconTheme.color,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               MyFlutterApp.texturesIcon,
-              color: Colors.black,
+              color: _selectedPage == 2
+                  ? Theme.of(context).accentColor
+                  : Theme.of(context).primaryIconTheme.color,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               MyFlutterApp.videoIcon,
-              color: Colors.black,
+              color: _selectedPage == 3
+                  ? Theme.of(context).accentColor
+                  : Theme.of(context).primaryIconTheme.color,
             ),
             label: '',
           ),
