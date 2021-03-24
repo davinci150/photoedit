@@ -57,13 +57,11 @@ class _StartScreen extends State<ProcessingScreen> {
           }),
           actions: [
             IconButton(
-                icon: const Icon(
-                  Icons.add,
-                  color: Colors.blue,
-                ),
-                onPressed: () {
-                  //_bloc.add(TapAddImageEvent());
-                }),
+              icon: Icon(Icons.add, color: Theme.of(context).accentColor),
+              onPressed: () {
+                //_bloc.add(TapAddImageEvent());
+              },
+            ),
           ]),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

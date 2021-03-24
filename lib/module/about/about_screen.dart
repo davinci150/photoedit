@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../my_flutter_app_icons.dart';
+
 class AboutScreen extends StatelessWidget {
   const AboutScreen({Key key}) : super(key: key);
   @override
@@ -55,16 +57,16 @@ class AboutScreen extends StatelessWidget {
                   height: 40,
                 ),
                 Row(children: [
-                  Image.asset('assets/instagramm_image.png',
-                      height: 22, width: 22),
+                  Icon(MyFlutterApp.instagrammIcon,
+                      color: Theme.of(context).accentColor),
                   const SizedBox(
                     width: 10,
                   ),
-                  const Text(
+                  Text(
                     '@burimova',
                     style: TextStyle(
                       fontSize: 24,
-                      color: Colors.blue,
+                      color: Theme.of(context).accentColor,
                       fontFamily: 'SF-Pro',
                     ),
                   ),
