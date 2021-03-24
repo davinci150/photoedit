@@ -23,7 +23,7 @@ class Editor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.all(
             Radius.circular(2),
@@ -37,7 +37,7 @@ class Editor extends StatelessWidget {
           ),
           Visibility(
             visible: isSelected,
-            child: Padding(
+            child: const Padding(
                 padding: EdgeInsets.only(
                   bottom: 22,
                   left: 30,
@@ -75,44 +75,47 @@ class _PresetsScreenState extends State<PresetsScreen> {
             child: Container(
           color: Colors.grey,
         )),
+        const SizedBox(
+          height: 16,
+        ),
         SizedBox(
           height: 60,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              const Editor(
+            children: const <Widget> [
+              Editor(
                   image: 'assets/original_filter_image.png',
                   textFilter: 'Original',
                   color: Colors.grey,
                   isSelected: false),
-              const SizedBox(
+              SizedBox(
                 width: 12,
               ),
-              const Editor(
+              Editor(
                   image: 'assets/fresh_filter_image.png',
                   textFilter: 'Fresh',
                   color: Colors.orange,
                   isSelected: false),
-              const SizedBox(
+              SizedBox(
                 width: 12,
               ),
-              const Editor(
+              Editor(
                   image: 'assets/vintage_filter_image.png',
                   textFilter: 'Vintage',
                   color: Colors.red,
                   isSelected: false),
-              const SizedBox(
+              SizedBox(
                 width: 12,
               ),
-              const Editor(
+              Editor(
                   image: 'assets/mood_filter_image.png',
                   textFilter: 'Mood',
                   color: Colors.green,
                   isSelected: true),
-              const SizedBox(
+              SizedBox(
                 width: 12,
               ),
-              const Editor(
+              Editor(
                   image: 'assets/natural_filter_image.png',
                   textFilter: 'Natural',
                   color: Colors.green,
