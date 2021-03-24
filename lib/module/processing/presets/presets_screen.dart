@@ -29,11 +29,12 @@ class Editor extends StatelessWidget {
             Radius.circular(2),
           ),
         ),
-        height: 68,
+        height: 80,
         width: 60,
         child: Stack(alignment: Alignment.bottomCenter, children: [
           Image.asset(
             image,
+
           ),
           Visibility(
             visible: isSelected,
@@ -58,6 +59,7 @@ class Editor extends StatelessWidget {
                 textFilter,
                 style: const TextStyle(
                   color: Colors.white,
+                  fontSize: 12
                 ),
               ),
             ),

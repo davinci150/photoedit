@@ -69,11 +69,13 @@ class _StartScreen extends State<ProcessingScreen> {
         selectedIconTheme: const IconThemeData(size: 24),
         selectedFontSize: 0,
         unselectedFontSize: 0,
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
               MyFlutterApp.presetsIcon,
-              color: Colors.black,
+              color: _selectedPage == 0
+                  ? Theme.of(context).accentColor
+                  : Theme.of(context).primaryIconTheme.color,
             ),
             label: '',
           ),
@@ -100,7 +102,7 @@ class _StartScreen extends State<ProcessingScreen> {
           ),
         ],
         currentIndex: _selectedPage,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Theme.of(context).accentColor,
         onTap: _onItemTapped,
       ),
       body: _children[_selectedPage].tabWidget,

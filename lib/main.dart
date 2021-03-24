@@ -12,9 +12,39 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      darkTheme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.dark,
+
+        //active taped elements
+        accentColor: const Color(0xFF2B83EC),
+
+        //disable icon
+        iconTheme: const IconThemeData(color: Color(0xFF959595)),
+
+        //enable icon
+        primaryIconTheme: const IconThemeData(color: Color(0xFF0F0F0F)),
+
+        fontFamily: 'Georgia',
+      ),
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
+
+        //active taped elements
+        accentColor: const Color(0xFF2B83EC),
+
+        //disable icon
+        iconTheme: const IconThemeData(color: Color(0xFF959595)),
+
+        //enable icon
+        primaryIconTheme: const IconThemeData(color: Color(0xFF0F0F0F)),
+
+        fontFamily: 'Georgia',
+      ),
       title: 'Exciter',
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

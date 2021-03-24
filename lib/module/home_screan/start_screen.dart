@@ -28,10 +28,10 @@ class _StartScreen extends State<StartScreen> {
     super.initState();
   }
 
-  Color _bottomBarIconsColor = const Color(0xFF959595);
-
   @override
   Widget build(BuildContext context) {
+    Color _bottomBarIconsColor = Theme.of(context).iconTheme.color;
+
     return StreamBuilder<StartScreenState>(
         stream: _bloc.stream,
         builder: (context, snapshot) {
@@ -47,7 +47,7 @@ class _StartScreen extends State<StartScreen> {
           });
 
           if (isSelected) {
-            _bottomBarIconsColor = Colors.black;
+            _bottomBarIconsColor = Theme.of(context).iconTheme.color;
           } else {
             _bottomBarIconsColor = const Color(0xFF959595);
           }
@@ -79,9 +79,9 @@ class _StartScreen extends State<StartScreen> {
                   }),
                   actions: [
                     IconButton(
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.add,
-                          color: Colors.blue,
+                          color: Theme.of(context).accentColor,
                         ),
                         onPressed: () {
                           _bloc.add(TapAddImageEvent());
@@ -123,7 +123,7 @@ class _StartScreen extends State<StartScreen> {
                   ),
                 ],
                 currentIndex: _selectedIndex,
-                selectedItemColor: Colors.blue,
+                selectedItemColor: Theme.of(context).accentColor,
                 onTap: isSelected ? _onItemTapped : null,
               ),
               body: Container(
@@ -146,7 +146,9 @@ class _StartScreen extends State<StartScreen> {
         decoration: BoxDecoration(
             border: Border.all(
           width: 3,
-          color: pic.isSelected ? const Color(0xFF2B83EC) : Colors.transparent,
+          color: pic.isSelected
+              ? Theme.of(context).accentColor
+              : Colors.transparent,
         )),
         height: 132,
         width: 100,
@@ -160,9 +162,5 @@ class _StartScreen extends State<StartScreen> {
         context,
         MaterialPageRoute<dynamic>(
             builder: (context) => const ProcessingScreen()));
-
-    /* setState(() {
-      _selectedIndex = index;
-    });*/
   }
 }
