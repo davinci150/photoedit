@@ -1,5 +1,5 @@
 import '../../module/home_screan/start_screen_bloc.dart';
-import '../service/database/dao/user_dao.dart';
+import '../service/database/dao/recent_pic_dao.dart';
 import '../service/image_picker/image_picker.dart';
 import '../service/router/router.dart';
 import 'service_locator.dart';

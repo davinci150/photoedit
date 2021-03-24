@@ -5,7 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/service/database/dao/user_dao.dart';
+import '../../core/service/database/dao/recent_pic_dao.dart';
 import '../../core/service/image_picker/image_picker.dart';
 import '../../core/service/router/router.dart';
 import 'model/recent_pic_model.dart';
