@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //darkTheme:
-      theme:
+      darkTheme:
+          //theme:
           //
           ThemeData(
         // Define the default brightness and colors.
@@ -35,10 +35,10 @@ class MyApp extends StatelessWidget {
 
         fontFamily: 'Georgia',
       ),
-      darkTheme:
-      //theme:
-      //
-      ThemeData(
+      //darkTheme:
+      theme:
+          //
+          ThemeData(
         // Define the default brightness and colors.
         brightness: Brightness.light,
         primaryColor: Colors.white,

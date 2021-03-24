@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../my_flutter_app_icons.dart';
 import '../about/about_screen.dart';
+import '../presentation/fonts.dart';
 import 'editor/editor_screen.dart';
 import 'presets/presets_screen.dart';
 import 'texture/texture_screen.dart';
@@ -34,18 +35,17 @@ class _StartScreen extends State<ProcessingScreen> {
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.white,
+          //backgroundColor: Colors.white,
           elevation: 0,
           title: Text(
             _children[_selectedPage].title,
-            style: const TextStyle(
-                color: Colors.black, fontSize: 17, fontFamily: 'SF-Pro'),
+            style: const TextStyle(fontSize: 17, fontFamily: AppFonts.sfPro),
           ),
           leading: Builder(builder: (BuildContext context) {
             return IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.error_outline,
-                color: Colors.black,
+                color: Theme.of(context).primaryIconTheme.color,
               ),
               onPressed: () {
                 Navigator.push<dynamic>(

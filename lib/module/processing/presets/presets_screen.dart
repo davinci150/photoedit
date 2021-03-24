@@ -76,8 +76,8 @@ class _PresetsScreenState extends State<PresetsScreen> {
       children: [
         Expanded(
             child: Container(
-          color: Colors.grey,
-        )),
+                // color: Colors.grey,
+                )),
         const SizedBox(
           height: 16,
         ),
@@ -91,7 +91,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                 Editor(
                     image: 'assets/original_filter_image.png',
                     textFilter: 'Original',
-                    color: Colors.grey,
+                    color: Color(0xFF959595),
                     isSelected: false),
                 SizedBox(
                   width: 12,
@@ -99,7 +99,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                 Editor(
                     image: 'assets/fresh_filter_image.png',
                     textFilter: 'Fresh',
-                    color: Colors.orange,
+                    color: Color(0xFFEC904C),
                     isSelected: false),
                 SizedBox(
                   width: 12,
@@ -107,7 +107,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                 Editor(
                     image: 'assets/vintage_filter_image.png',
                     textFilter: 'Vintage',
-                    color: Colors.red,
+                    color: Color(0xFFEC4C4C),
                     isSelected: false),
                 SizedBox(
                   width: 12,
@@ -115,7 +115,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                 Editor(
                     image: 'assets/mood_filter_image.png',
                     textFilter: 'Mood',
-                    color: Colors.green,
+                    color: Color(0xFF53D13E),
                     isSelected: true),
                 SizedBox(
                   width: 12,
@@ -123,7 +123,7 @@ class _PresetsScreenState extends State<PresetsScreen> {
                 Editor(
                     image: 'assets/natural_filter_image.png',
                     textFilter: 'Natural',
-                    color: Colors.green,
+                    color: Color(0xFF00A843),
                     isSelected: true),
               ],
             ),
