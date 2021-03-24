@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'core/di/service_locator.dart';
-import 'module/home_screan/start_screen.dart';
+import 'module/splash/splash_screan.dart';
 
 void main() {
   setupLocator();
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Exciter',
-      home: StartScreen(),
+      home: SplashScreen(),
     );
   }
 }
