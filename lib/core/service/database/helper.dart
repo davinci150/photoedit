@@ -25,7 +25,7 @@ class DBHelper {
   Future<Database> initDB() async {
     final Directory documentsDirectory =
         await getApplicationDocumentsDirectory();
-    final String path = join(documentsDirectory.path, 'db2.db');
+    final String path = join(documentsDirectory.path, 'db5.db');
 
     return openDatabase(path, version: 1, onOpen: (db) {},
         onCreate: (Database db, int version) async {

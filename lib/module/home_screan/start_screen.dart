@@ -47,9 +47,9 @@ class _StartScreen extends State<StartScreen> {
           });
 
           if (isSelected) {
-            _bottomBarIconsColor = Theme.of(context).iconTheme.color;
+            _bottomBarIconsColor = Theme.of(context).primaryIconTheme.color;
           } else {
-            _bottomBarIconsColor = const Color(0xFF959595);
+            _bottomBarIconsColor = Theme.of(context).iconTheme.color;
           }
           return Scaffold(
               appBar: AppBar(
