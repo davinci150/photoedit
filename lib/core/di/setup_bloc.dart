@@ -5,9 +5,10 @@ import '../service/router/router.dart';
 import 'service_locator.dart';
 
 void setupBlock() {
+  //Avoid single cascade in expression statements.
   sl
     ..registerFactory<SaveFastingBloc>(() => SaveFastingBloc(
-          recentPicModelDao: getIts<RecentPicDao>(),
+          recentPicModelDao: getIts<RecentPicDaoI>(),
           router: getIts<RouterI>(),
           imagePicker: getIts<ImagePickerServiceI>(),
         ));

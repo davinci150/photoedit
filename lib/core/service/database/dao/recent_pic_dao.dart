@@ -40,6 +40,7 @@ class RecentPicDao implements RecentPicDaoI {
     return list;
   }
 
+  @override
   Future<List<RecentPicModel>> filterRecentPic() async {
     final List<RecentPicModel> files = await getRecentPic();
     for (final RecentPicModel element in files) {
@@ -49,6 +50,22 @@ class RecentPicDao implements RecentPicDaoI {
       }
     }
     return getRecentPic();
+  }
+
+  @override
+  Future<RecentPicModel> getSelectedPic() async {
+    final database = DBHelper().initDB();
+    final db = await database;
+    final List<Map<String, dynamic>> maps =
+        db.query(tableRecentPic, where: 'isSelected = ?', whereArgs: [1])
+            as List<Map<String, dynamic>>;
+
+    RecentPicModel itemModel;
+    if (maps.isNotEmpty) {
+      final Map<String, dynamic> item = maps.first;
+      itemModel = RecentPicModel.fromJson(item);
+    }
+    return itemModel;
   }
 
   Future<bool> _isExist(String path) async {
@@ -71,7 +88,11 @@ class RecentPicDao implements RecentPicDaoI {
 abstract class RecentPicDaoI {
   Future<void> saveRecentPic(RecentPicModel item);
 
+  Future<RecentPicModel> getSelectedPic();
+
   Future<List<RecentPicModel>> getRecentPic();
 
   Future<void> remove({@required String id});
+
+  Future<List<RecentPicModel>> filterRecentPic();
 }
