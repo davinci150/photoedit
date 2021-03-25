@@ -9,9 +9,10 @@ import 'package:package_info/package_info.dart';
 import '../context_provider/context_provider_i.dart';
 
 class BuildInfoProvider implements BuildInfoProviderI {
-  ContextProviderI contextProvider;
 
   BuildInfoProvider({@required this.contextProvider});
+
+  ContextProviderI contextProvider;
 
   @override
   Future<BuildInfoModel> getBuildInfo() async {
