@@ -45,7 +45,10 @@ class Editor extends StatelessWidget {
           Row(
             children: [
               CircleAvatar(
-                backgroundColor: const Color(0xFFF6F7F8),
+                backgroundColor: WidgetsBinding.instance.window.platformBrightness ==
+                    Brightness.light
+                    ? const Color(0xFFF6F7F8)
+                    : const Color(0xFF212121),
                 radius: 24,
                 child: Icon(
                   iconFilter,

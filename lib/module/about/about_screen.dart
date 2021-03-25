@@ -43,7 +43,10 @@ class AboutScreen extends StatelessWidget {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
-                color: Colors.grey[200],
+                color: WidgetsBinding.instance.window.platformBrightness ==
+                        Brightness.light
+                    ? const Color(0xFFF6F7F8)
+                    : const Color(0xFF212121),
               ),
               child: Column(children: [
                 Image.asset('assets/blogger_photo.png'),
