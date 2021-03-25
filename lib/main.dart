@@ -1,7 +1,7 @@
-import 'package:exciter/module/presentation/fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'core/di/service_locator.dart';
+import 'module/presentation/fonts.dart';
 import 'module/splash/splash_screan.dart';
 
 void main() {

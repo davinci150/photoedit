@@ -9,6 +9,7 @@ class RecentPicModel {
     } else {
       isSelected = false;
     }
+    isSelected=false;
     path = json['path'] as String;
   }
 
