@@ -150,16 +150,16 @@ abstract class BuildInfoProviderI {
 }
 
 class BuildInfoModel {
-  final String appName;
-  final String packageName;
-  final String buildNumber;
-  final String version;
-
   BuildInfoModel(
       {@required this.appName,
       @required this.packageName,
       @required this.version,
       @required this.buildNumber});
+
+  final String appName;
+  final String packageName;
+  final String buildNumber;
+  final String version;
 }
 
 class DeviceInfoModel {
