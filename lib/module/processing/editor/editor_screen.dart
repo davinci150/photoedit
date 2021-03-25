@@ -1,58 +1,8 @@
-import 'package:exciter/module/presentation/fonts.dart';
 import 'package:flutter/material.dart';
 
 import '../../../my_flutter_app_icons.dart';
+import '../../presentation/fonts.dart';
 
-/*class EditorScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(child: Container()),
-        SizedBox(
-          height: 60,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              Container(
-                height: 60,
-                width: 80,
-                child: const Icon(MyFlutterApp.colourIcon),
-              ),
-              Container(
-                height: 60,
-                width: 80,
-                child: const Icon(MyFlutterApp.lightIcon),
-              ),
-              Container(
-                height: 60,
-                width: 80,
-                child: const Icon(MyFlutterApp.contrastIcon),
-              ),
-              Container(
-                height: 60,
-                width: 80,
-                child: const Icon(MyFlutterApp.shadowsIcon),
-              ),
-              Container(
-                height: 60,
-                width: 80,
-                child: const Icon(MyFlutterApp.saturationIcon),
-              ),
-              Container(
-                  height: 60,
-                  width: 80,
-                  child: const Icon(MyFlutterApp.temperatureIcon)),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 16,
-        )
-      ],
-    );
-  }
-}*/
 class EditorScreen extends StatefulWidget {
   const EditorScreen({
     Key key,
@@ -82,21 +32,24 @@ class Editor extends StatelessWidget {
             children: [
               Text(
                 textFilter,
-                style:
-                    const TextStyle(fontSize: 14.0, fontFamily: AppFonts.sfPro),
+                style: const TextStyle(
+                    fontSize: 12.0,
+                    fontFamily: AppFonts.sfPro,
+                    fontWeight: FontWeight.w400),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           Row(
             children: [
               CircleAvatar(
-                backgroundColor: Colors.grey,
+                backgroundColor: const Color(0xFFF6F7F8),
                 radius: 24,
                 child: Icon(
                   iconFilter,
+                  size: 20,
                   color: Theme.of(context).primaryIconTheme.color,
                 ),
               ),
@@ -121,12 +74,12 @@ class _EditorScreen extends State<EditorScreen> {
           height: 16,
         ),
         SizedBox(
-          height: 70,
+          height: 72,
           child: Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: <Widget>[
+              children: const <Widget>[
                 Editor(
                   textFilter: 'Color',
                   iconFilter: MyFlutterApp.colourIcon,
@@ -171,7 +124,7 @@ class _EditorScreen extends State<EditorScreen> {
           ),
         ),
         const SizedBox(
-          height: 16,
+          height: 24,
         )
       ],
     );

@@ -33,15 +33,17 @@ class AboutScreen extends StatelessWidget {
                   }),
             ]),
         body: Padding(
-          padding:
-              const EdgeInsets.only(bottom: 24, top: 24, left: 24, right: 24),
+          padding: const EdgeInsets.only(bottom: 24, left: 24, right: 24),
           child: ListView(shrinkWrap: true, children: [
+            const SizedBox(
+              height: 24,
+            ),
             Container(
               padding: const EdgeInsets.fromLTRB(14.0, 14.0, 14.0, 14.0),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14),
-                //color: Colors.grey[200],
+                color: Colors.grey[200],
               ),
               child: Column(children: [
                 Image.asset('assets/blogger_photo.png'),

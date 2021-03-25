@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../my_flutter_app_icons.dart';
-import '../about/about_screen.dart';
 import '../presentation/fonts.dart';
 import 'editor/editor_screen.dart';
 import 'presets/presets_screen.dart';
@@ -24,8 +23,8 @@ class _StartScreen extends State<ProcessingScreen> {
   }
 
   final List<RecentTab> _children = [
-    RecentTab(title: 'Present', tabWidget: const PresetsScreen()),
-    RecentTab(title: 'Edit', tabWidget: EditorScreen()),
+    RecentTab(title: 'Presets', tabWidget: const PresetsScreen()),
+    RecentTab(title: 'Edit', tabWidget: const EditorScreen()),
     RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
     RecentTab(title: 'Video Effects', tabWidget: const VideoScreen())
   ];
@@ -35,32 +34,26 @@ class _StartScreen extends State<ProcessingScreen> {
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
-          //backgroundColor: Colors.white,
           elevation: 0,
           title: Text(
             _children[_selectedPage].title,
-            style: const TextStyle(fontSize: 17, fontFamily: AppFonts.sfPro),
+            style: const TextStyle(
+                fontSize: 17,
+                fontFamily: AppFonts.sfPro,
+                fontWeight: FontWeight.w400),
           ),
-          leading: Builder(builder: (BuildContext context) {
-            return IconButton(
-              icon: Icon(
-                Icons.error_outline,
-                color: Theme.of(context).primaryIconTheme.color,
-              ),
-              onPressed: () {
-                Navigator.push<dynamic>(
-                    context,
-                    MaterialPageRoute<dynamic>(
-                        builder: (context) => const AboutScreen()));
-              },
-            );
-          }),
           actions: [
-            IconButton(
-              icon: Icon(Icons.add, color: Theme.of(context).accentColor),
-              onPressed: () {
-                //_bloc.add(TapAddImageEvent());
-              },
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.only(right: 20),
+              child: Text(
+                'Save',
+                style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: AppFonts.sfPro),
+              ),
             ),
           ]),
       bottomNavigationBar: BottomNavigationBar(

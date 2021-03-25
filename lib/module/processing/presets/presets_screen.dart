@@ -52,16 +52,17 @@ class Editor extends StatelessWidget {
       ),
       Visibility(
         visible: isSelected,
-        child: const Padding(
-          padding: EdgeInsets.only(
-            top: 15,
-            left: 30,
-          ),
-          child: CircleAvatar(
+        child: Container(
+          width: 60,
+          alignment: Alignment.bottomRight,
+          padding: const EdgeInsets.only(bottom: 22, right: 4),
+          child: const CircleAvatar(
               backgroundColor: Colors.white,
-              radius: 12,
+              radius: 8,
               child: Icon(
                 MyFlutterApp.lockIcon,
+                color: Colors.black,
+                size: 16,
               )),
         ),
       )

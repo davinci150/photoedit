@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:exciter/module/presentation/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../my_flutter_app_icons.dart';
 import '../about/about_screen.dart';
+import '../presentation/fonts.dart';
 import '../processing/processing_screen.dart';
 import 'model/recent_pic_model.dart';
 import 'start_screen_bloc.dart';

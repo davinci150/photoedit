@@ -1,3 +1,4 @@
+import 'package:exciter/module/presentation/fonts.dart';
 import 'package:flutter/material.dart';
 
 import 'core/di/service_locator.dart';
@@ -33,13 +34,12 @@ class MyApp extends StatelessWidget {
         //enable icon
         primaryIconTheme: const IconThemeData(color: Colors.white),
 
-        fontFamily: 'Georgia',
+        fontFamily: AppFonts.sfPro,
       ),
       //darkTheme:
       theme:
           //
           ThemeData(
-        // Define the default brightness and colors.
         brightness: Brightness.light,
         primaryColor: Colors.white,
 
@@ -51,10 +51,10 @@ class MyApp extends StatelessWidget {
 
         //enable icon
 
-        primaryTextTheme:
+        /* primaryTextTheme:
             TextTheme(headline1: const TextStyle(color: Colors.white)),
-
-        fontFamily: 'Georgia',
+*/
+        fontFamily: AppFonts.sfPro,
       ),
       title: 'Exciter',
       home: const SplashScreen(),
