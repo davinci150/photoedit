@@ -55,8 +55,8 @@ class Editor extends StatelessWidget {
                   size: 20,
                   color: WidgetsBinding.instance.window.platformBrightness ==
                       Brightness.light
-                      ?  Colors.white
-                      :  Colors.black,
+                      ?  Colors.black
+                      :  Colors.white,
                 ),
               ),
             ],
