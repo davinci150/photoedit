@@ -53,7 +53,10 @@ class Editor extends StatelessWidget {
                 child: Icon(
                   iconFilter,
                   size: 20,
-                  color: Theme.of(context).primaryIconTheme.color,
+                  color: WidgetsBinding.instance.window.platformBrightness ==
+                      Brightness.light
+                      ?  Colors.white
+                      :  Colors.black,
                 ),
               ),
             ],

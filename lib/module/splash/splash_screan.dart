@@ -48,16 +48,16 @@ class _LoaderState extends State<SplashScreen> {
                     fontFamily: AppFonts.montserrat,
                     fontWeight: FontWeight.w300),
               ),
-              /*Image.asset(
-                'assets/exciter_img.png',
-                height: 68,
-              ),*/
               const SizedBox(
                 height: 30,
               ),
-              const LinearProgressIndicator(
-                  //backgroundColor: Colors.grey,
-                  ),
+              LinearProgressIndicator(
+                  backgroundColor: WidgetsBinding.instance.window
+                      .platformBrightness ==
+                      Brightness.light
+                      ? const Color(0xFFF6F7F8)
+                      : const Color(0xFF212121),
+              ),
             ],
           ),
         ),
