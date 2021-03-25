@@ -161,6 +161,6 @@ class _StartScreen extends State<StartScreen> {
     Navigator.push<dynamic>(
         context,
         MaterialPageRoute<dynamic>(
-            builder: (context) => const ProcessingScreen()));
+            builder: (context) => ProcessingScreen(selelectedTab: index)));
   }
 }

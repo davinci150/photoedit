@@ -8,7 +8,8 @@ import 'texture/texture_screen.dart';
 import 'video/video_screen.dart';
 
 class ProcessingScreen extends StatefulWidget {
-  const ProcessingScreen({Key key}) : super(key: key);
+  const ProcessingScreen({Key key, int this.selelectedTab}) : super(key: key);
+  final int selelectedTab;
 
   @override
   _StartScreen createState() => _StartScreen();
@@ -19,6 +20,7 @@ class _StartScreen extends State<ProcessingScreen> {
 
   @override
   void initState() {
+    _selectedPage=widget.selelectedTab;
     super.initState();
   }
 
