@@ -37,6 +37,11 @@ class _StartScreen extends State<ProcessingScreen> {
       appBar: AppBar(
           centerTitle: true,
           elevation: 0,
+          leading: IconButton(
+            icon: Icon(Icons.chevron_left,
+                color: Theme.of(context).primaryIconTheme.color),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           title: Text(
             _children[_selectedPage].title,
             style: const TextStyle(
