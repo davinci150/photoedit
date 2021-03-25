@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../my_flutter_app_icons.dart';
 import '../presentation/fonts.dart';
 import 'editor/editor_screen.dart';
+import 'frames/frames.dart';
 import 'presets/presets_screen.dart';
 import 'texture/texture_screen.dart';
 import 'video/video_screen.dart';
@@ -28,6 +29,7 @@ class _StartScreen extends State<ProcessingScreen> {
     RecentTab(title: 'Presets', tabWidget: const PresetsScreen()),
     RecentTab(title: 'Edit', tabWidget: const EditorScreen()),
     RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
+    RecentTab(title: 'Frames', tabWidget: const FramesScreen()),
     RecentTab(title: 'Video Effects', tabWidget: const VideoScreen())
   ];
 
@@ -99,8 +101,17 @@ class _StartScreen extends State<ProcessingScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              MyFlutterApp.videoIcon,
+              MyFlutterApp.framesIcon,
               color: _selectedPage == 3
+                  ? Theme.of(context).accentColor
+                  : Theme.of(context).primaryIconTheme.color,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              MyFlutterApp.videoIcon,
+              color: _selectedPage == 4
                   ? Theme.of(context).accentColor
                   : Theme.of(context).primaryIconTheme.color,
             ),

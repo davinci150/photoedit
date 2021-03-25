@@ -117,6 +117,13 @@ class _StartScreen extends State<StartScreen> {
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(
+                      MyFlutterApp.framesIcon,
+                      color: _bottomBarIconsColor,
+                    ),
+                    label: '',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
                       MyFlutterApp.videoIcon,
                       color: _bottomBarIconsColor,
                     ),

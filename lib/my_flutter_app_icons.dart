@@ -33,4 +33,5 @@ class MyFlutterApp {
   static const IconData lockIcon = IconData(0xe80f, fontFamily: _kFontFam);
   static const IconData instagrammIcon =
       IconData(0xe802, fontFamily: _kFontFam);
+  static const IconData framesIcon = IconData(0xe810, fontFamily: _kFontFam);
 }
