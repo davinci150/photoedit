@@ -1,21 +1,5 @@
-/*import 'package:flutter/material.dart';
-
-class TextureScreen extends StatefulWidget {
-  const TextureScreen({Key key}) : super(key: key);
-
-  @override
-  _TextureScreenState createState() => _TextureScreenState();
-}
-
-class _TextureScreenState extends State<TextureScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('TextureScreen'));
-  }
-}*/
 import 'package:flutter/material.dart';
-
-import '../../../my_flutter_app_icons.dart';
+import '../editor_widget.dart';
 
 class TextureScreen extends StatefulWidget {
   const TextureScreen({
@@ -24,64 +8,6 @@ class TextureScreen extends StatefulWidget {
 
   @override
   _TextureScreen createState() => _TextureScreen();
-}
-
-class Editor extends StatelessWidget {
-  const Editor({Key key, this.textFilter, this.color, this.isSelected})
-      : super(key: key);
-
-  final String textFilter;
-  final Color color;
-  final bool isSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(children: <Widget>[
-      Image.asset(
-        'assets/original_filter_image.png',
-        fit: BoxFit.fill,
-        width: 60.0,
-        height: 60.0,
-      ),
-      Container(
-        padding: const EdgeInsets.all(0.0),
-        alignment: Alignment.bottomCenter,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(3),
-                bottomRight: Radius.circular(3)),
-            color: color,
-          ),
-          padding: const EdgeInsets.all(0.0),
-          alignment: Alignment.center,
-          width: 60,
-          height: 18.0,
-          child: Text(
-            textFilter,
-            style: const TextStyle(
-                fontSize: 14.0, color: Colors.white, fontFamily: 'SF-Pro'),
-          ),
-        ),
-      ),
-      Visibility(
-        visible: isSelected,
-        child: Container(
-          width: 60,
-          alignment: Alignment.bottomRight,
-          padding: const EdgeInsets.only(bottom: 22, right: 4),
-          child: const CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 8,
-              child: Icon(
-                MyFlutterApp.lockIcon,
-                color: Colors.black,
-                size: 16,
-              )),
-        ),
-      )
-    ]);
-  }
 }
 
 class _TextureScreen extends State<TextureScreen> {
@@ -104,6 +30,7 @@ class _TextureScreen extends State<TextureScreen> {
               scrollDirection: Axis.horizontal,
               children: const <Widget>[
                 Editor(
+                    image: 'assets/original_filter_image.png',
                     textFilter: 'None',
                     color: Color(0xFF959595),
                     isSelected: false),
@@ -111,6 +38,7 @@ class _TextureScreen extends State<TextureScreen> {
                   width: 12,
                 ),
                 Editor(
+                    image: 'assets/dust_1_textures_image.png',
                     textFilter: 'Dust 01',
                     color: Color(0xFF0F0F0F),
                     isSelected: false),
@@ -118,6 +46,7 @@ class _TextureScreen extends State<TextureScreen> {
                   width: 12,
                 ),
                 Editor(
+                    image: 'assets/dust_2_textures_image.png',
                     textFilter: 'Dust 02',
                     color: Color(0xFF0F0F0F),
                     isSelected: true),
@@ -125,6 +54,7 @@ class _TextureScreen extends State<TextureScreen> {
                   width: 12,
                 ),
                 Editor(
+                    image: 'assets/dust_3_textures_image.png',
                     textFilter: 'Dust 03',
                     color: Color(0xFF0F0F0F),
                     isSelected: true),
@@ -132,6 +62,7 @@ class _TextureScreen extends State<TextureScreen> {
                   width: 12,
                 ),
                 Editor(
+                    image: 'assets/dust_4_textures_image.png',
                     textFilter: 'Dust 04',
                     color: Color(0xFF0F0F0F),
                     isSelected: true),
