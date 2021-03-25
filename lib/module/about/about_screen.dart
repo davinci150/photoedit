@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../my_flutter_app_icons.dart';
 import '../presentation/fonts.dart';
@@ -16,6 +17,7 @@ class AboutScreen extends StatelessWidget {
             title: const Text(
               'Help',
               style: TextStyle(
+                fontWeight: FontWeight.w400,
                 fontSize: 17,
                 fontFamily: AppFonts.sfPro,
               ),
@@ -57,21 +59,24 @@ class AboutScreen extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                Row(children: [
-                  Icon(MyFlutterApp.instagrammIcon,
-                      color: Theme.of(context).accentColor),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    '@burimova',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Theme.of(context).accentColor,
-                      fontFamily: AppFonts.sfPro,
+                InkWell(
+                  onTap: _launchURL,
+                  child: Row(children: [
+                    Icon(MyFlutterApp.instagrammIcon,
+                        color: Theme.of(context).accentColor),
+                    const SizedBox(
+                      width: 10,
                     ),
-                  ),
-                ]),
+                    Text(
+                      '@burimova',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Theme.of(context).accentColor,
+                        fontFamily: AppFonts.sfPro,
+                      ),
+                    ),
+                  ]),
+                ),
                 const SizedBox(height: 10),
               ]),
             ),
@@ -104,4 +109,10 @@ class AboutScreen extends StatelessWidget {
           ]),
         ));
   }
+
+  static const String _url = 'https://instagram.com/burimova';
+
+  Future<void> _launchURL() async => await canLaunch(_url) != null
+      ? await launch(_url)
+      : throw Exception('Could not launch $_url');
 }
