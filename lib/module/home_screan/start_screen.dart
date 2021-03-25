@@ -92,6 +92,7 @@ class _StartScreen extends State<StartScreen> {
                 selectedIconTheme: const IconThemeData(size: 24),
                 selectedFontSize: 0,
                 unselectedFontSize: 0,
+                elevation: 0,
                 items: <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Icon(
