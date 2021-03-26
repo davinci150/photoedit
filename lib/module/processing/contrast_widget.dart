@@ -1,13 +1,15 @@
-import 'package:exciter/module/presentation/fonts.dart';
 import 'package:flutter/material.dart';
-import '../../my_flutter_app_icons.dart';
 
-// ignore: must_be_immutable
-class Contrast extends StatelessWidget {
-  Contrast({Key key, this.currentSliderValue}) : super(key: key);
-  double currentSliderValue;
-  void sliderChanged(double value) {}
+import '../presentation/fonts.dart';
 
+class Contrast extends StatefulWidget {
+  @override
+  _Contrast createState() => _Contrast();
+}
+
+class _Contrast extends State<Contrast> {
+  //void sliderChanged(double value) {}
+  var _value = 0.0;
   //double currentSliderValue = 0;
 
   @override
@@ -17,40 +19,64 @@ class Contrast extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Slider(
-              value: currentSliderValue = 0,
-              activeColor: Color(0xFF2B83EC),
-              inactiveColor: Color(0xFF313131),
-              min: -100,
-              max: 100,
+          Text(
+            _value.round().toString(),
+            style: TextStyle(
+              fontSize: 14,
+              fontFamily: AppFonts.sfPro,
+              color: Theme.of(context).primaryIconTheme.color,
+            ),
+          ),
+          SliderTheme(
+            data: SliderTheme.of(context).copyWith(
+              thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 13),
+              trackHeight: 3.0,
+              thumbColor: const Color(0xFF2B83EC),
+              //overlayShape: const RoundSliderOverlayShape(overlayRadius: 0.0),
+            ),
+            child: Slider(
+              value: _value,
+              activeColor: const Color(0xFF2B83EC),
+              inactiveColor:
+                  WidgetsBinding.instance.window.platformBrightness ==
+                          Brightness.light
+                      ? const Color(0xFFEAEAEA)
+                      : const Color(0xFF313131),
+
+              min: -50,
+              max: 50,
               divisions: 100,
-              label: currentSliderValue.toString(),
-              onChanged: (value) {
+              //label: _value.round().toString(),
+              onChanged: (double value) {
                 setState(() {
-                  currentSliderValue = value;
+                  _value = value;
                 });
-              }),
-          SizedBox(height: 20),
+              },
+            ),
+          ),
+          const SizedBox(height: 25),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //mainAxisSize: MainAxisSize.max,
               //crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                const Icon(Icons.clear, color: Color(0xFF646464), size: 25),
+                Icon(Icons.clear,
+                    color: WidgetsBinding.instance.window.platformBrightness ==
+                            Brightness.light
+                        ? const Color(0xFFCACACA)
+                        : const Color(0xFF646464),
+                    size: 25),
                 Text(
-                  "Contrast",
+                  'Contrast',
                   style: TextStyle(
                       fontSize: 17.0,
                       color: Theme.of(context).primaryIconTheme.color,
                       fontWeight: FontWeight.w400,
                       fontFamily: AppFonts.sfPro),
                 ),
-                const Icon(Icons.check,
-                    color: const Color(0xFF2B83EC), size: 25)
+                const Icon(Icons.check, color: Color(0xFF2B83EC), size: 25)
               ]),
         ],
       ),
     );
   }
-
-  void setState(Null Function() param0) {}
 }

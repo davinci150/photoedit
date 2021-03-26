@@ -69,8 +69,8 @@ class Editor extends StatelessWidget {
   }
 }
 
-void sliderChanged(double value) {}
-double _currentSliderValue = 0;
+/*void sliderChanged(double value) {}
+double _currentSliderValue = 0;*/
 
 class _EditorScreen extends State<EditorScreen> {
   @override
@@ -79,47 +79,8 @@ class _EditorScreen extends State<EditorScreen> {
       children: [
         Expanded(
             child: Container(
-          color: Colors.grey,
-          child:
-              Contrast(), /*Padding(
-            padding: const EdgeInsets.only(left: 46, bottom: 27, right: 46),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Slider(
-                    value: _currentSliderValue,
-                    activeColor: Color(0xFF2B83EC),
-                    inactiveColor: Color(0xFF313131),
-                    min: -100,
-                    max: 100,
-                    divisions: 100,
-                    label: _currentSliderValue.round().toString(),
-                    onChanged: (value) {
-                      setState(() {
-                        _currentSliderValue = value;
-                      });
-                    }),
-                SizedBox(height: 20),
-                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //mainAxisSize: MainAxisSize.max,
-                    //crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      const Icon(Icons.clear,
-                          color: Color(0xFF646464), size: 25),
-                      Text(
-                        "Contrast",
-                        style: TextStyle(
-                            fontSize: 17.0,
-                            color: Theme.of(context).primaryIconTheme.color,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: AppFonts.sfPro),
-                      ),
-                      const Icon(Icons.check,
-                          color: const Color(0xFF2B83EC), size: 25)
-                    ]),
-              ],
-            ),
-          ),*/
+          //color: Colors.grey,
+          child: Contrast(),
         )),
         const SizedBox(
           height: 16,
