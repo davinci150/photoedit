@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../contrast_widget.dart';
 import '../editor_widget.dart';
 
 class TextureScreen extends StatefulWidget {
@@ -17,8 +18,11 @@ class _TextureScreen extends State<TextureScreen> {
       children: [
         Expanded(
             child: Container(
-                // color: Colors.grey,
-                )),
+          child: Contrast(
+              //textImage: 'Dust 01',
+              ),
+          // color: Colors.grey,
+        )),
         const SizedBox(
           height: 16,
         ),
