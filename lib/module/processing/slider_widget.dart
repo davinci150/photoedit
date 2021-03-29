@@ -2,24 +2,31 @@ import 'package:flutter/material.dart';
 
 import '../presentation/fonts.dart';
 
-class SliderWidget extends StatelessWidget {
-  const SliderWidget({Key key, this.valueSlider}) : super(key: key);
+// ignore: must_be_immutable
+class SliderWidget extends StatefulWidget {
+  SliderWidget(
+      {Key key, @required this.valueSlider, @required this.valueListener})
+      : super(key: key);
   //double valueSlider;
 
   /*@override
   SliderWidgetState createState() => SliderWidgetState();*/
 //}
 
-  final double valueSlider;
+  double valueSlider;
+  final void Function(double value) valueListener;
 
-//class SliderWidgetState extends State<SliderWidget> {
-  //double valueSlider = 0.0;
+  @override
+  _SliderWidgetState createState() => _SliderWidgetState();
+}
+
+class _SliderWidgetState extends State<SliderWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          valueSlider.round().toString(),
+          widget.valueSlider.round().toString(),
           style: TextStyle(
             fontSize: 14,
             fontFamily: AppFonts.sfPro,
@@ -36,7 +43,7 @@ class SliderWidget extends StatelessWidget {
             //overlayShape: const RoundSliderOverlayShape(overlayRadius: 0.0),
           ),
           child: Slider(
-            value: valueSlider,
+            value: widget.valueSlider,
             activeColor: const Color(0xFF2B83EC),
             inactiveColor: WidgetsBinding.instance.window.platformBrightness ==
                     Brightness.light
@@ -48,18 +55,14 @@ class SliderWidget extends StatelessWidget {
             divisions: 100,
             //label: _value.round().toString(),
             onChanged: (double value) {
-              // setState(() {
-              //widget.valueSlider = value;
-              SliderWidget(
-                valueSlider: value,
-              );
-              // });
+              widget.valueListener(value);
+              setState(() {
+                widget.valueSlider = value;
+              });
             },
           ),
         ),
       ],
     );
   }
-
-  //void setState(Null Function() param0) {}
 }
