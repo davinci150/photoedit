@@ -19,6 +19,7 @@ class _TextureScreen extends State<TextureScreen> {
         Expanded(
             child: Container(
           child: Contrast(
+
               //textImage: 'Dust 01',
               ),
           // color: Colors.grey,

@@ -11,7 +11,7 @@ class _Contrast extends State<Contrast> {
   //void sliderChanged(double value) {}
   var _value = 0.0;
   //double currentSliderValue = 0;
-
+  String textWidget = '';
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,8 +30,10 @@ class _Contrast extends State<Contrast> {
           SliderTheme(
             data: SliderTheme.of(context).copyWith(
               thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 13),
+              trackShape: CustomTrackShape(),
               trackHeight: 3.0,
               thumbColor: const Color(0xFF2B83EC),
+
               //overlayShape: const RoundSliderOverlayShape(overlayRadius: 0.0),
             ),
             child: Slider(
@@ -66,7 +68,8 @@ class _Contrast extends State<Contrast> {
                         : const Color(0xFF646464),
                     size: 25),
                 Text(
-                  'Contrast',
+                  //'Contrast',
+                  textWidget,
                   style: TextStyle(
                       fontSize: 17.0,
                       color: Theme.of(context).primaryIconTheme.color,
@@ -78,5 +81,23 @@ class _Contrast extends State<Contrast> {
         ],
       ),
     );
+  }
+}
+
+class CustomTrackShape extends RoundedRectSliderTrackShape {
+  @override
+  Rect getPreferredRect({
+    @required RenderBox parentBox,
+    Offset offset = Offset.zero,
+    @required SliderThemeData sliderTheme,
+    bool isEnabled = false,
+    bool isDiscrete = false,
+  }) {
+    final double trackHeight = sliderTheme.trackHeight;
+    final double trackLeft = offset.dx;
+    final double trackTop =
+        offset.dy + (parentBox.size.height - trackHeight) / 2;
+    final double trackWidth = parentBox.size.width;
+    return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
   }
 }
