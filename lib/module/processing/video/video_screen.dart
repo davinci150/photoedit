@@ -86,7 +86,14 @@ class _VideoScreen extends State<VideoScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 49),
                   child: Row(
                     children: [
-                      const Text('Opacity'),
+                      Text(
+                        'Opacity',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: AppFonts.sfPro,
+                          color: Theme.of(context).primaryIconTheme.color,
+                        ),
+                      ),
                       const Spacer(flex: 11),
                       Text(
                         _valueOpacity.round().toString(),

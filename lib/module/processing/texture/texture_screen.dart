@@ -22,8 +22,11 @@ class _TextureScreen extends State<TextureScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
               //const Contrast(),
-              SliderWidget(
-                numberSlider: 0.0,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 29),
+                child: SliderWidget(
+                  valueSlider: -50.0,
+                ),
               ),
               SizedBox(height: 25),
               EditTextWidget(
