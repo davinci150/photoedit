@@ -82,9 +82,11 @@ class _EditorScreen extends State<EditorScreen> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
-              //Contrast(),
-              SliderWidget(
-                numberSlider: 0.0,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 29),
+                child: SliderWidget(
+                  valueSlider: 50.0,
+                ),
               ),
               SizedBox(height: 25),
               EditTextWidget(
