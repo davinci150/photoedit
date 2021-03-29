@@ -79,20 +79,21 @@ class _EditorScreen extends State<EditorScreen> {
     return Column(
       children: [
         Expanded(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 29),
-                child: SliderWidget(
-                  valueSlider: 50.0,
-                ),
-              ),
-              SizedBox(height: 25),
-              EditTextWidget(
-                editText: 'Contrast',
-              ),
-            ])),
+            child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 29),
+            child: SliderWidget(
+              valueSlider: 50.0,
+              valueListener: (value) {
+                print(value);
+              },
+            ),
+          ),
+          const SizedBox(height: 25),
+          const EditTextWidget(
+            editText: 'Contrast',
+          ),
+        ])),
         const SizedBox(
           height: 16,
         ),

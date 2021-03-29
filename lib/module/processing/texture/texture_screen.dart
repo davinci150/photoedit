@@ -18,21 +18,22 @@ class _TextureScreen extends State<TextureScreen> {
     return Column(
       children: [
         Expanded(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-              //const Contrast(),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 29),
-                child: SliderWidget(
-                  valueSlider: -50.0,
-                ),
-              ),
-              SizedBox(height: 25),
-              EditTextWidget(
-                editText: 'Dust 01',
-              ),
-            ])),
+            child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          //const Contrast(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 29),
+            child: SliderWidget(
+              valueSlider: -50.0,
+              valueListener: (value) {
+                print(value);
+              },
+            ),
+          ),
+          const SizedBox(height: 25),
+          const EditTextWidget(
+            editText: 'Dust 01',
+          ),
+        ])),
         const SizedBox(
           height: 16,
         ),
