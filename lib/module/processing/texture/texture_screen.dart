@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../contrast_widget.dart';
+import '../edit_text_widget.dart';
 import '../editor_widget.dart';
+import '../slider_widget.dart';
 
 class TextureScreen extends StatefulWidget {
   const TextureScreen({
@@ -17,13 +18,22 @@ class _TextureScreen extends State<TextureScreen> {
     return Column(
       children: [
         Expanded(
-            child: Container(
-          child: Contrast(
-
-              //textImage: 'Dust 01',
-              ),
-          // color: Colors.grey,
-        )),
+            child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          //const Contrast(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 29),
+            child: SliderWidget(
+              valueSlider: -50.0,
+              valueListener: (value) {
+                print(value);
+              },
+            ),
+          ),
+          const SizedBox(height: 25),
+          const EditTextWidget(
+            editText: 'Dust 01',
+          ),
+        ])),
         const SizedBox(
           height: 16,
         ),

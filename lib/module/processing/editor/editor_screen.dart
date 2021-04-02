@@ -1,8 +1,9 @@
-import 'package:exciter/module/processing/contrast_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../my_flutter_app_icons.dart';
 import '../../presentation/fonts.dart';
+import '../edit_text_widget.dart';
+import '../slider_widget.dart';
 
 class EditorScreen extends StatefulWidget {
   const EditorScreen({
@@ -78,10 +79,21 @@ class _EditorScreen extends State<EditorScreen> {
     return Column(
       children: [
         Expanded(
-            child: Container(
-          //color: Colors.grey,
-          child: Contrast(),
-        )),
+            child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 29),
+            child: SliderWidget(
+              valueSlider: 50.0,
+              valueListener: (value) {
+                print(value);
+              },
+            ),
+          ),
+          const SizedBox(height: 25),
+          const EditTextWidget(
+            editText: 'Contrast',
+          ),
+        ])),
         const SizedBox(
           height: 16,
         ),
