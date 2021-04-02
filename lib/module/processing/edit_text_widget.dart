@@ -6,8 +6,9 @@ class EditTextWidget extends StatelessWidget {
   const EditTextWidget({
     Key key,
     this.editText,
+    this.onAsseptDeclineButtonClick,
   }) : super(key: key);
-
+  final void Function(bool isAssept) onAsseptDeclineButtonClick;
   final String editText;
 
   @override
@@ -27,7 +28,9 @@ class EditTextWidget extends StatelessWidget {
                   ? const Color(0xFFCACACA)
                   : const Color(0xFF646464),
               iconSize: 25,
-              onPressed: () {},
+              onPressed: () {
+                onAsseptDeclineButtonClick(false);
+              },
             ),
             Text(
               editText,
@@ -40,7 +43,9 @@ class EditTextWidget extends StatelessWidget {
             IconButton(
                 color: const Color(0xFF2B83EC),
                 iconSize: 25,
-                onPressed: () {},
+                onPressed: () {
+                  onAsseptDeclineButtonClick(true);
+                },
                 icon: const Icon(
                   Icons.check,
                 ))
