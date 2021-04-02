@@ -9,9 +9,13 @@ import 'texture/texture_screen.dart';
 import 'video/video_screen.dart';
 
 class ProcessingScreen extends StatefulWidget {
-  const ProcessingScreen({Key key, this.selelectedTab}) : super(key: key);
+  const ProcessingScreen({
+    Key key,
+    this.selelectedTab,
+    this.isBottomToolbarVisible,
+  }) : super(key: key);
   final int selelectedTab;
-
+  final bool isBottomToolbarVisible;
   @override
   _StartScreen createState() => _StartScreen();
 }
@@ -29,7 +33,10 @@ class _StartScreen extends State<ProcessingScreen> {
 
   final List<RecentTab> _children = [
     RecentTab(title: 'Presets', tabWidget: const PresetsScreen()),
-    RecentTab(title: 'Edit', tabWidget: const EditorScreen()),
+    RecentTab(
+        title: 'Edit',
+        tabWidget:
+            EditorScreen(onShowHideBottomToolbar: showHideBottomToolbar)),
     RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
     RecentTab(title: 'Frames', tabWidget: const FramesScreen()),
     RecentTab(
@@ -66,6 +73,14 @@ class _StartScreen extends State<ProcessingScreen> {
                 fontWeight: FontWeight.w400),
           ),
           actions: [
+            //TEST BUTTON
+            IconButton(
+                icon: const Icon(Icons.add_circle),
+                onPressed: () {
+                  setState(
+                      () => isBottomToolbarVisible = !isBottomToolbarVisible);
+                }),
+            //TEST BUTTON
             Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.only(right: 20),

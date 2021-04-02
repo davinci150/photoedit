@@ -2,13 +2,20 @@ import 'package:flutter/material.dart';
 
 import '../../../my_flutter_app_icons.dart';
 import '../../presentation/fonts.dart';
+import '../edit_bottom_widget.dart';
 import '../edit_text_widget.dart';
+
+import '../list_edit_widget.dart';
+import '../processing_screen.dart';
 import '../slider_widget.dart';
 
 class EditorScreen extends StatefulWidget {
   const EditorScreen({
     Key key,
+    @required this.onShowHideBottomToolbar,
   }) : super(key: key);
+  final void Function(bool isBottomToolvarVisible) onShowBottomToolbar;
+  // bool get isBottomToolbarVisible => true;
 
   @override
   _EditorScreen createState() => _EditorScreen();
@@ -19,10 +26,12 @@ class Editor extends StatelessWidget {
     Key key,
     this.textFilter,
     this.iconFilter,
+    //  this.isBottomToolbarVisible,
   }) : super(key: key);
 
   final IconData iconFilter;
   final String textFilter;
+  //final bool isBottomToolbarVisible;
 
   @override
   Widget build(BuildContext context) {
@@ -46,20 +55,23 @@ class Editor extends StatelessWidget {
           ),
           Row(
             children: [
-              CircleAvatar(
-                backgroundColor:
-                    WidgetsBinding.instance.window.platformBrightness ==
+              InkWell(
+                //onTap: showHideBottomToolbar(true),
+                child: CircleAvatar(
+                  backgroundColor:
+                      WidgetsBinding.instance.window.platformBrightness ==
+                              Brightness.light
+                          ? const Color(0xFFF6F7F8)
+                          : const Color(0xFF212121),
+                  radius: 24,
+                  child: Icon(
+                    iconFilter,
+                    size: 20,
+                    color: WidgetsBinding.instance.window.platformBrightness ==
                             Brightness.light
-                        ? const Color(0xFFF6F7F8)
-                        : const Color(0xFF212121),
-                radius: 24,
-                child: Icon(
-                  iconFilter,
-                  size: 20,
-                  color: WidgetsBinding.instance.window.platformBrightness ==
-                          Brightness.light
-                      ? Colors.black
-                      : Colors.white,
+                        ? Colors.black
+                        : Colors.white,
+                  ),
                 ),
               ),
             ],
@@ -74,83 +86,61 @@ class Editor extends StatelessWidget {
 double _currentSliderValue = 0;*/
 
 class _EditorScreen extends State<EditorScreen> {
+  bool isBottomToolbarVisible = true;
+  void showHideBottomToolbar(bool isVisible) {
+    widget.onShowBottomToolbar(!isVisible);
+
+    setState(() {
+      isBottomToolbarVisible = isVisible;
+    });
+  }
+  //bool isBool = VisibleBottomBar(isBottomToolbarVisible) as bool;
+
+  // static bool get isBottomToolbarVisible => true;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        IconButton(
+            icon: const Icon(Icons.add_circle),
+            onPressed: () {
+              //setState(() => isBottomToolbarVisible);
+              showHideBottomToolbar(false);
+            }),
         Expanded(
             child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 29),
-            child: SliderWidget(
-              valueSlider: 50.0,
-              valueListener: (value) {
-                print(value);
+            child: EditBottomWidget(
+              editText: 'Contrast',
+              onAsseptDeclineButtonClick: (bool isAssept) {
+                showHideBottomToolbar(true);
               },
             ),
-          ),
-          const SizedBox(height: 25),
-          const EditTextWidget(
-            editText: 'Contrast',
-          ),
+          )
         ])),
         const SizedBox(
           height: 16,
         ),
-        SizedBox(
-          height: 72,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const <Widget>[
-                Editor(
-                  textFilter: 'Color',
-                  iconFilter: MyFlutterApp.colourIcon,
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                  iconFilter: MyFlutterApp.lightIcon,
-                  textFilter: 'Light',
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                  iconFilter: MyFlutterApp.contrastIcon,
-                  textFilter: 'Contrast',
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                  iconFilter: MyFlutterApp.shadowsIcon,
-                  textFilter: 'Shadows',
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                  iconFilter: MyFlutterApp.saturationIcon,
-                  textFilter: 'Saturation',
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                  iconFilter: MyFlutterApp.temperatureIcon,
-                  textFilter: 'Temperature',
-                ),
-              ],
-            ),
-          ),
-        ),
+        if (isBottomToolbarVisible != false)
+          const SizedBox(
+            height: 72,
+            child: Padding(
+                padding: EdgeInsets.only(left: 20, right: 20),
+                child: ListEditWidget()),
+          )
+        else
+          const SizedBox.shrink(),
         const SizedBox(
           height: 24,
         )
       ],
     );
   }
+}
+
+class VisibleBottomBar {
+  bool isBottomToolbarVisible;
+  VisibleBottomBar(this.isBottomToolbarVisible);
 }
