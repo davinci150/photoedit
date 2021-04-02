@@ -19,6 +19,8 @@ class ProcessingScreen extends StatefulWidget {
 class _StartScreen extends State<ProcessingScreen> {
   int _selectedPage = 0;
 
+  bool isBottomToolbarVisible = true;
+
   @override
   void initState() {
     _selectedPage = widget.selelectedTab;
@@ -30,8 +32,20 @@ class _StartScreen extends State<ProcessingScreen> {
     RecentTab(title: 'Edit', tabWidget: const EditorScreen()),
     RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
     RecentTab(title: 'Frames', tabWidget: const FramesScreen()),
-    RecentTab(title: 'Video Effects', tabWidget: const VideoScreen())
+    RecentTab(
+        title: 'Video Effects',
+        tabWidget: const VideoScreen(
+
+            //onShowHideBottomToolbar
+
+            ))
   ];
+
+  void showHideBottomToolbar(bool isVisible) {
+    setState(() {
+      isBottomToolbarVisible = isVisible;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,63 +79,65 @@ class _StartScreen extends State<ProcessingScreen> {
               ),
             ),
           ]),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedIconTheme: const IconThemeData(size: 24),
-        selectedFontSize: 0,
-        unselectedFontSize: 0,
-        elevation: 0,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              MyFlutterApp.presetsIcon,
-              color: _selectedPage == 0
-                  ? Theme.of(context).accentColor
-                  : Theme.of(context).primaryIconTheme.color,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              MyFlutterApp.editIcon,
-              color: _selectedPage == 1
-                  ? Theme.of(context).accentColor
-                  : Theme.of(context).primaryIconTheme.color,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              MyFlutterApp.texturesIcon,
-              color: _selectedPage == 2
-                  ? Theme.of(context).accentColor
-                  : Theme.of(context).primaryIconTheme.color,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              MyFlutterApp.framesIcon,
-              color: _selectedPage == 3
-                  ? Theme.of(context).accentColor
-                  : Theme.of(context).primaryIconTheme.color,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              MyFlutterApp.videoIcon,
-              color: _selectedPage == 4
-                  ? Theme.of(context).accentColor
-                  : Theme.of(context).primaryIconTheme.color,
-            ),
-            label: '',
-          ),
-        ],
-        currentIndex: _selectedPage,
-        selectedItemColor: Theme.of(context).accentColor,
-        onTap: _onItemTapped,
-      ),
+      bottomNavigationBar: isBottomToolbarVisible
+          ? BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              selectedIconTheme: const IconThemeData(size: 24),
+              selectedFontSize: 0,
+              unselectedFontSize: 0,
+              elevation: 0,
+              items: <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    MyFlutterApp.presetsIcon,
+                    color: _selectedPage == 0
+                        ? Theme.of(context).accentColor
+                        : Theme.of(context).primaryIconTheme.color,
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    MyFlutterApp.editIcon,
+                    color: _selectedPage == 1
+                        ? Theme.of(context).accentColor
+                        : Theme.of(context).primaryIconTheme.color,
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    MyFlutterApp.texturesIcon,
+                    color: _selectedPage == 2
+                        ? Theme.of(context).accentColor
+                        : Theme.of(context).primaryIconTheme.color,
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    MyFlutterApp.framesIcon,
+                    color: _selectedPage == 3
+                        ? Theme.of(context).accentColor
+                        : Theme.of(context).primaryIconTheme.color,
+                  ),
+                  label: '',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    MyFlutterApp.videoIcon,
+                    color: _selectedPage == 4
+                        ? Theme.of(context).accentColor
+                        : Theme.of(context).primaryIconTheme.color,
+                  ),
+                  label: '',
+                ),
+              ],
+              currentIndex: _selectedPage,
+              selectedItemColor: Theme.of(context).accentColor,
+              onTap: _onItemTapped,
+            )
+          : const SizedBox.shrink(),
       body: _children[_selectedPage].tabWidget,
     );
   }
