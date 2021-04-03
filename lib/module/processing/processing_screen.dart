@@ -28,25 +28,28 @@ class _StartScreen extends State<ProcessingScreen> {
   @override
   void initState() {
     _selectedPage = widget.selelectedTab;
-    super.initState();
-  }
 
-  final List<RecentTab> _children = [
-    RecentTab(title: 'Presets', tabWidget: const PresetsScreen()),
-    RecentTab(
-        title: 'Edit',
-        tabWidget:
-            EditorScreen(onShowHideBottomToolbar: showHideBottomToolbar)),
-    RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
-    RecentTab(title: 'Frames', tabWidget: const FramesScreen()),
-    RecentTab(
-        title: 'Video Effects',
-        tabWidget: const VideoScreen(
+    _children = [
+      RecentTab(title: 'Presets', tabWidget: const PresetsScreen()),
+      RecentTab(
+          title: 'Edit',
+          tabWidget:
+          EditorScreen(showOrHideBottomToolbar: showHideBottomToolbar)),
+      RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
+      RecentTab(title: 'Frames', tabWidget: const FramesScreen()),
+      RecentTab(
+          title: 'Video Effects',
+          tabWidget: const VideoScreen(
 
             //onShowHideBottomToolbar
 
-            ))
-  ];
+          ))
+    ];
+
+    super.initState();
+  }
+
+   List<RecentTab> _children ;
 
   void showHideBottomToolbar(bool isVisible) {
     setState(() {
@@ -73,14 +76,6 @@ class _StartScreen extends State<ProcessingScreen> {
                 fontWeight: FontWeight.w400),
           ),
           actions: [
-            //TEST BUTTON
-            IconButton(
-                icon: const Icon(Icons.add_circle),
-                onPressed: () {
-                  setState(
-                      () => isBottomToolbarVisible = !isBottomToolbarVisible);
-                }),
-            //TEST BUTTON
             Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.only(right: 20),

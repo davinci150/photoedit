@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../editor_widget.dart';
+import '../widget/editor_widget.dart';
 
 class PresetsScreen extends StatefulWidget {
   const PresetsScreen({

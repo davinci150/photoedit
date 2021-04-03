@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../presentation/fonts.dart';
-import '../edit_text_widget.dart';
-import '../editor_widget.dart';
+import '../widget/edit_text_widget.dart';
+import '../widget/editor_widget.dart';
 
 class VideoScreen extends StatefulWidget {
   const VideoScreen({

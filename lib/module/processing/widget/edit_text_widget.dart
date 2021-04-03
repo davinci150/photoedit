@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../presentation/fonts.dart';
+import '../../presentation/fonts.dart';
 
 class EditTextWidget extends StatelessWidget {
   const EditTextWidget({
@@ -15,9 +15,8 @@ class EditTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 36),
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //mainAxisSize: MainAxisSize.max,
-          //crossAxisAlignment: CrossAxisAlignment.center,
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
               icon: const Icon(

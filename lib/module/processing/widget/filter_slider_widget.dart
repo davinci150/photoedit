@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'edit_text_widget.dart';
 import 'slider_widget.dart';
 
-class EditBottomWidget extends StatefulWidget {
-  const EditBottomWidget({
+class FilterSliderWidget extends StatefulWidget {
+  const FilterSliderWidget({
     Key key,
     this.editText,
     @required this.onAsseptDeclineButtonClick,
@@ -15,7 +15,7 @@ class EditBottomWidget extends StatefulWidget {
   _EditBottomWidget createState() => _EditBottomWidget();
 }
 
-class _EditBottomWidget extends State<EditBottomWidget> {
+class _EditBottomWidget extends State<FilterSliderWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(

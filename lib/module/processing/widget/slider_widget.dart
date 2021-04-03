@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../presentation/fonts.dart';
+import '../../presentation/fonts.dart';
 
-// ignore: must_be_immutable
 class SliderWidget extends StatefulWidget {
-  SliderWidget(
+  const SliderWidget(
       {Key key, @required this.valueSlider, @required this.valueListener})
       : super(key: key);
-  //double valueSlider;
 
-  /*@override
-  SliderWidgetState createState() => SliderWidgetState();*/
-//}
-
-  double valueSlider;
+  final double valueSlider;
   final void Function(double value) valueListener;
 
   @override
@@ -57,7 +51,7 @@ class _SliderWidgetState extends State<SliderWidget> {
             onChanged: (double value) {
               widget.valueListener(value);
               setState(() {
-                widget.valueSlider = value;
+                //widget.valueSlider = value;
               });
             },
           ),

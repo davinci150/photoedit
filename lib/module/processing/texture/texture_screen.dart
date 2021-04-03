@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../edit_text_widget.dart';
-import '../editor_widget.dart';
-import '../slider_widget.dart';
+import '../widget/edit_text_widget.dart';
+import '../widget/editor_widget.dart';
+import '../widget/slider_widget.dart';
 
 class TextureScreen extends StatefulWidget {
   const TextureScreen({
