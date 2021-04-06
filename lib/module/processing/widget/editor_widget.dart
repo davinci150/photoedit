@@ -17,7 +17,7 @@ class Editor extends StatelessWidget {
         image,
         fit: BoxFit.fill,
         width: 60.0,
-        height: 60.0,
+        height: 68.0,
       ),
       Container(
         padding: const EdgeInsets.all(0.0),

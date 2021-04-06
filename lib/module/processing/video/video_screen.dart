@@ -135,7 +135,7 @@ class _SlidersVideoWidgetState extends State<SlidersVideoWidget> {
               ),
               const Spacer(flex: 15),
               Text(
-                defaultValue.toString(),
+                defaultValue==0.00? defaultValue.toInt().toString():defaultValue.toStringAsFixed(2),
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: AppFonts.sfPro,
@@ -227,7 +227,7 @@ class _SlidersVideoOpacityWidgetState extends State<SlidersVideoOpacityWidget> {
               ),
               const Spacer(flex: 15),
               Text(
-                defaultValue.toString(),
+                defaultValue==0.00? defaultValue.toInt().toString():defaultValue.toStringAsFixed(2),
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: AppFonts.sfPro,
@@ -235,7 +235,7 @@ class _SlidersVideoOpacityWidgetState extends State<SlidersVideoOpacityWidget> {
                 ),
               ),
               const Spacer(
-                flex: 17,
+                flex: 21,
               )
             ],
           ),
