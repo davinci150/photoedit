@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-import 'video_filter_button_widget.dart';
+import 'list_texture_widget.dart';
+import 'texture_filter_button_widget.dart';
 
 class ListVideoWidget extends StatelessWidget {
   const ListVideoWidget({Key key, @override this.onFilterSelect})
       : super(key: key);
-  final void Function(FilterVideoButtonModel id) onFilterSelect;
+  final void Function(FilterTextureButtonModel id) onFilterSelect;
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        FilterVideoButtonWidget(
-          filterVideo: FilterVideoButtonModel(
+        FilterTextureButtonWidget(
+          filterTexture: FilterTextureButtonModel(
             id: 'Vintage',
             name: 'Vintage',
             image: 'assets/original_filter_image.png',
@@ -25,8 +26,8 @@ class ListVideoWidget extends StatelessWidget {
         const SizedBox(
           width: 12,
         ),
-        FilterVideoButtonWidget(
-          filterVideo: FilterVideoButtonModel(
+        FilterTextureButtonWidget(
+          filterTexture: FilterTextureButtonModel(
               id: 'Slow Mo',
               name: 'Slow Mo',
               image: 'assets/original_filter_image.png',
@@ -37,8 +38,8 @@ class ListVideoWidget extends StatelessWidget {
         const SizedBox(
           width: 12,
         ),
-        FilterVideoButtonWidget(
-          filterVideo: FilterVideoButtonModel(
+        FilterTextureButtonWidget(
+          filterTexture: FilterTextureButtonModel(
               id: 'Glitter',
               name: 'Glitter',
               image: 'assets/original_filter_image.png',
@@ -49,8 +50,8 @@ class ListVideoWidget extends StatelessWidget {
         const SizedBox(
           width: 12,
         ),
-        FilterVideoButtonWidget(
-          filterVideo: FilterVideoButtonModel(
+        FilterTextureButtonWidget(
+          filterTexture: FilterTextureButtonModel(
               id: 'Prism',
               name: 'Prism',
               image: 'assets/original_filter_image.png',
@@ -61,8 +62,8 @@ class ListVideoWidget extends StatelessWidget {
         const SizedBox(
           width: 12,
         ),
-        FilterVideoButtonWidget(
-          filterVideo: FilterVideoButtonModel(
+        FilterTextureButtonWidget(
+          filterTexture: FilterTextureButtonModel(
               id: 'Subtitles',
               name: 'Subtitles',
               image: 'assets/original_filter_image.png',
@@ -78,7 +79,7 @@ class ListVideoWidget extends StatelessWidget {
   }
 }
 
-class FilterVideoButtonModel {
+/*class FilterVideoButtonModel {
   FilterVideoButtonModel({
     @required this.name,
     @required this.image,
@@ -91,4 +92,4 @@ class FilterVideoButtonModel {
   final String id;
   final String name;
   final String image;
-}
+}*/

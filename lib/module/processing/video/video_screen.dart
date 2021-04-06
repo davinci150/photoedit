@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../presentation/fonts.dart';
 import '../widget/edit_text_widget.dart';
+import '../widget/list_texture_widget.dart';
 import '../widget/list_video_widget.dart';
 
 class VideoScreen extends StatefulWidget {
@@ -14,11 +15,8 @@ class VideoScreen extends StatefulWidget {
   _VideoScreen createState() => _VideoScreen();
 }
 
-/*var _valueSize = 0.0;
-var _valueOpacity = 0.0;*/
-
 class _VideoScreen extends State<VideoScreen> {
-  FilterVideoButtonModel selectedFilterVideo;
+  FilterTextureButtonModel selectedFilterVideo;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -73,7 +71,7 @@ class _VideoScreen extends State<VideoScreen> {
             child: Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: ListVideoWidget(
-                  onFilterSelect: (FilterVideoButtonModel modelVideo) {
+                  onFilterSelect: (FilterTextureButtonModel modelVideo) {
                     setState(() {
                       selectedFilterVideo = modelVideo;
                       widget.showOrHideBottomToolbar(false);
@@ -199,7 +197,8 @@ class SlidersVideoOpacityWidget extends StatefulWidget {
   final double endValue;
   final double defaultValue;
   @override
-  _SlidersVideoOpacityWidgetState createState() => _SlidersVideoOpacityWidgetState();
+  _SlidersVideoOpacityWidgetState createState() =>
+      _SlidersVideoOpacityWidgetState();
 }
 
 class _SlidersVideoOpacityWidgetState extends State<SlidersVideoOpacityWidget> {
@@ -267,14 +266,16 @@ class _SlidersVideoOpacityWidgetState extends State<SlidersVideoOpacityWidget> {
               },
             ),
           ),
-        ),const SizedBox(height: 0),
-                 Padding(
-                   padding: const EdgeInsets.symmetric(horizontal: 36),
-                   child: EditTextWidget(
-                    onAsseptDeclineButtonClick: widget.onAsseptDeclineButtonClick,
-          editText: widget.editText,
-               ),
-                 ) ],);
-     
+        ),
+        const SizedBox(height: 0),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 36),
+          child: EditTextWidget(
+            onAsseptDeclineButtonClick: widget.onAsseptDeclineButtonClick,
+            editText: widget.editText,
+          ),
+        )
+      ],
+    );
   }
 }
