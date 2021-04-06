@@ -1,5 +1,7 @@
 
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 import '../../presentation/fonts.dart';
@@ -26,6 +28,10 @@ class SliderWidget extends StatefulWidget {
 
 class _SliderWidgetState extends State<SliderWidget> {
   double defaultValue;
+
+  
+
+  
  @override
   void initState() {
     defaultValue = widget.defaultValue;
@@ -36,8 +42,10 @@ class _SliderWidgetState extends State<SliderWidget> {
     return Column(
       children: [
         Text(
+         
+           defaultValue==0.00? defaultValue.toInt().toString():defaultValue.toStringAsFixed(2),
           
-          defaultValue.toDouble().toStringAsFixed(2),
+         
           style: TextStyle(
             fontSize: 14,
             fontFamily: AppFonts.sfPro,
