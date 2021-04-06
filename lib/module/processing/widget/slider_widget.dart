@@ -1,26 +1,43 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../../presentation/fonts.dart';
 
-class SliderWidget extends StatefulWidget {
-  const SliderWidget(
-      {Key key, @required this.valueSlider, @required this.valueListener})
-      : super(key: key);
 
-  final double valueSlider;
-  final void Function(double value) valueListener;
+class SliderWidget extends StatefulWidget {
+  const SliderWidget({
+    Key key,
+    @required this.sliderValueListener,
+    @required this.startValue,
+    @required this.endValue,
+    @required this.defaultValue,
+  }) : super(key: key);
+
+  
+  final void Function(double value) sliderValueListener;
+  final double startValue;
+  final double endValue;
+  final double defaultValue;
 
   @override
   _SliderWidgetState createState() => _SliderWidgetState();
 }
 
 class _SliderWidgetState extends State<SliderWidget> {
+  double defaultValue;
+ @override
+  void initState() {
+    defaultValue = widget.defaultValue;
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          widget.valueSlider.round().toString(),
+          
+          defaultValue.toDouble().toStringAsFixed(2),
           style: TextStyle(
             fontSize: 14,
             fontFamily: AppFonts.sfPro,
@@ -37,21 +54,21 @@ class _SliderWidgetState extends State<SliderWidget> {
             //overlayShape: const RoundSliderOverlayShape(overlayRadius: 0.0),
           ),
           child: Slider(
-            value: widget.valueSlider,
+            value: defaultValue,
             activeColor: const Color(0xFF2B83EC),
             inactiveColor: WidgetsBinding.instance.window.platformBrightness ==
                     Brightness.light
                 ? const Color(0xFFEAEAEA)
                 : const Color(0xFF313131),
 
-            min: -50,
-            max: 50,
+            min: widget.startValue,
+            max: widget.endValue,
             divisions: 100,
-            //label: _value.round().toString(),
+            
             onChanged: (double value) {
-              widget.valueListener(value);
+              widget.sliderValueListener(value);
               setState(() {
-                //widget.valueSlider = value;
+                defaultValue = value;
               });
             },
           ),

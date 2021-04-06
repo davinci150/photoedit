@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import '../widget/edit_text_widget.dart';
-import '../widget/editor_widget.dart';
-import '../widget/slider_widget.dart';
+
+import '../widget/filter_slider_widget.dart';
+import '../widget/list_texture_widget.dart';
 
 class TextureScreen extends StatefulWidget {
   const TextureScreen({
-    Key key,
+    Key key,@required this.showOrHideBottomToolbar,
   }) : super(key: key);
-
+final void Function(bool isBottomToolvarVisible) showOrHideBottomToolbar;
   @override
   _TextureScreen createState() => _TextureScreen();
 }
 
 class _TextureScreen extends State<TextureScreen> {
+ FilterTextureButtonModel selectedFilterTexture;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,75 +21,52 @@ class _TextureScreen extends State<TextureScreen> {
         Expanded(
             child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
           //const Contrast(),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 29),
-            child: SliderWidget(
-              valueSlider: -50.0,
-              valueListener: (value) {
-                print(value);
-              },
-            ),
-          ),
-          const SizedBox(height: 25),
-          const EditTextWidget(
-            editText: 'Dust 01',
+          Visibility(
+            visible: selectedFilterTexture !=null,
+                      child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 29),
+              child: FilterSliderWidget(
+                endValue: 200,
+                startValue: 0,
+                defaultValue: 100,
+                sliderValueListener: (double value){
+                         debugPrint('slider value = $value');
+                },
+                editText: selectedFilterTexture?.name ?? '',
+                onAsseptDeclineButtonClick: (bool isAssept) {
+                  setState(() {
+                    selectedFilterTexture = null;
+                    widget.showOrHideBottomToolbar(true);
+                  });
+                },
+              ),
+              ),
           ),
         ])),
         const SizedBox(
           height: 16,
         ),
-        SizedBox(
-          height: 60,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const <Widget>[
-                Editor(
-                    image: 'assets/original_filter_image.png',
-                    textFilter: 'None',
-                    color: Color(0xFF959595),
-                    isSelected: false),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/dust_1_textures_image.png',
-                    textFilter: 'Dust 01',
-                    color: Color(0xFF0F0F0F),
-                    isSelected: false),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/dust_2_textures_image.png',
-                    textFilter: 'Dust 02',
-                    color: Color(0xFF0F0F0F),
-                    isSelected: true),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/dust_3_textures_image.png',
-                    textFilter: 'Dust 03',
-                    color: Color(0xFF0F0F0F),
-                    isSelected: true),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/dust_4_textures_image.png',
-                    textFilter: 'Dust 04',
-                    color: Color(0xFF0F0F0F),
-                    isSelected: true),
-              ],
-            ),
-          ),
-        ),
+        if (selectedFilterTexture == null)
+         SizedBox(
+            height: 72,
+            child: Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: ListTextureWidget(
+                  onFilterSelect: (FilterTextureButtonModel modelTexture) {
+                    setState(() {
+                      selectedFilterTexture = modelTexture;
+                      widget.showOrHideBottomToolbar(false);
+                    });
+                  },
+                )),
+          )
+        else const SizedBox.shrink(),
         const SizedBox(
           height: 16,
         )
+        
       ],
+      
     );
   }
 }

@@ -8,9 +8,18 @@ class FilterSliderWidget extends StatefulWidget {
     Key key,
     this.editText,
     @required this.onAsseptDeclineButtonClick,
+    @required this.startValue,
+    @required this.endValue,
+    @required this.defaultValue,
+    @required this.sliderValueListener,
   }) : super(key: key);
   final String editText;
   final void Function(bool isAssept) onAsseptDeclineButtonClick;
+  final double startValue;
+  final double endValue;
+  final double defaultValue;
+  final void Function(double value) sliderValueListener;
+
   @override
   _EditBottomWidget createState() => _EditBottomWidget();
 }
@@ -21,10 +30,11 @@ class _EditBottomWidget extends State<FilterSliderWidget> {
     return Column(
       children: [
         SliderWidget(
-          valueSlider: 50,
-          valueListener: (value) {
-            print(value);
-          },
+          //valueSlider: 50,
+          endValue: widget.endValue,
+          startValue: widget.startValue,
+          defaultValue: widget.defaultValue,
+          sliderValueListener: widget.sliderValueListener,
         ),
         const SizedBox(height: 25),
         EditTextWidget(

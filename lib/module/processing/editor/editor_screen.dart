@@ -88,6 +88,12 @@ class _EditorScreenState extends State<EditorScreen> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 29),
               child: FilterSliderWidget(
+                startValue: 0,// double value
+                endValue: 150, // double value
+                defaultValue: 50, // double value
+                sliderValueListener: (double value){
+                         debugPrint('slider value = $value');
+                },
                 editText: selectedFilter?.name ?? '',
                 onAsseptDeclineButtonClick: (bool isAssept) {
                   setState(() {

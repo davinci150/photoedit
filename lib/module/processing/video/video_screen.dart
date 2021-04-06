@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../presentation/fonts.dart';
 import '../widget/edit_text_widget.dart';
-import '../widget/editor_widget.dart';
+import '../widget/list_video_widget.dart';
 
 class VideoScreen extends StatefulWidget {
   const VideoScreen({
-    Key key,
+    Key key,@required this.showOrHideBottomToolbar,
   }) : super(key: key);
-
+final void Function(bool isBottomToolvarVisible) showOrHideBottomToolbar;
   @override
   _VideoScreen createState() => _VideoScreen();
 }
@@ -17,45 +17,96 @@ var _valueSize = 0.0;
 var _valueOpacity = 0.0;
 
 class _VideoScreen extends State<VideoScreen> {
+  FilterVideoButtonModel selectedFilterVideo;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(
-              bottom: 27,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 49),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Size',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: AppFonts.sfPro,
-                          color: Theme.of(context).primaryIconTheme.color,
-                        ),
+          child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+           Visibility(
+            visible: selectedFilterVideo !=null,
+                      child: SlidersVideoWidget(
+                        editText: selectedFilterVideo?.name ?? '',
+                        onAsseptDeclineButtonClick: (bool isAssept) {
+                          setState(() {
+                            selectedFilterVideo= null;
+                            widget.showOrHideBottomToolbar(true);
+                          });
+                        },
                       ),
-                      const Spacer(flex: 10),
-                      Text(
-                        _valueSize.round().toString(),
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: AppFonts.sfPro,
-                          color: Theme.of(context).primaryIconTheme.color,
-                        ),
+          ),
+          ]),),
+        const SizedBox(
+          height: 16,
+        ),
+        if (selectedFilterVideo == null)
+         SizedBox(
+            height: 72,
+            child: Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: ListVideoWidget(
+                  onFilterSelect: (FilterVideoButtonModel modelVideo) {
+                    setState(() {
+                      selectedFilterVideo = modelVideo;
+                      widget.showOrHideBottomToolbar(false);
+                    });
+                  },
+                )),
+          )
+        else const SizedBox.shrink(),
+        const SizedBox(
+          height: 16,
+        )
+      ],
+    );
+  }
+}
+class SlidersVideoWidget extends StatefulWidget {
+  const SlidersVideoWidget(
+      {Key key, this.onAsseptDeclineButtonClick, this.editText})
+      : super(key: key);
+      final String editText;
+final void Function(bool isAssept) onAsseptDeclineButtonClick;
+
+  @override
+  _SlidersVideoWidgetState createState() => _SlidersVideoWidgetState();
+}
+
+class _SlidersVideoWidgetState extends State<SlidersVideoWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 49),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Size',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: AppFonts.sfPro,
+                              color: Theme.of(context).primaryIconTheme.color,
+                            ),
+                          ),
+                          const Spacer(flex: 15),
+                          Text(
+                            _valueSize.round().toString(),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: AppFonts.sfPro,
+                              color: Theme.of(context).primaryIconTheme.color,
+                            ),
+                          ),
+                          const Spacer(
+                            flex: 17,
+                          )
+                        ],
                       ),
-                      const Spacer(
-                        flex: 12,
-                      )
-                    ],
-                  ),
-                ),
+                    ),
+      
+    
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 29),
                   child: SliderTheme(
@@ -94,7 +145,7 @@ class _VideoScreen extends State<VideoScreen> {
                           color: Theme.of(context).primaryIconTheme.color,
                         ),
                       ),
-                      const Spacer(flex: 11),
+                      const Spacer(flex: 12),
                       Text(
                         _valueOpacity.round().toString(),
                         style: TextStyle(
@@ -104,7 +155,7 @@ class _VideoScreen extends State<VideoScreen> {
                         ),
                       ),
                       const Spacer(
-                        flex: 16,
+                        flex: 18,
                       ),
                     ],
                   ),
@@ -135,88 +186,13 @@ class _VideoScreen extends State<VideoScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 25),
-                const EditTextWidget(
-                  editText: 'Vintage',
-                ),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 16,
-        ),
-        SizedBox(
-          height: 60,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: const <Widget>[
-                Editor(
-                    image: 'assets/original_filter_image.png',
-                    textFilter: 'Vintage',
-                    color: Color(0xFF4C6FEC),
-                    isSelected: false),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/original_filter_image.png',
-                    textFilter: 'Slow Mo',
-                    color: Color(0xFFEC904C),
-                    isSelected: false),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/original_filter_image.png',
-                    textFilter: 'Glitter',
-                    color: Color(0xFFD64CEC),
-                    isSelected: true),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/original_filter_image.png',
-                    textFilter: 'Prism',
-                    color: Color(0xFFEC4C69),
-                    isSelected: true),
-                SizedBox(
-                  width: 12,
-                ),
-                Editor(
-                    image: 'assets/original_filter_image.png',
-                    textFilter: 'Subtitles',
-                    color: Color(0xFF304D2E),
-                    isSelected: true),
-              ],
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 16,
-        )
-      ],
-    );
+                const SizedBox(height: 0),
+                 Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 36),
+                   child: EditTextWidget(
+                    onAsseptDeclineButtonClick: widget.onAsseptDeclineButtonClick,
+          editText: widget.editText,
+               ),
+                 ) ],);
   }
-}
-
-/*class CustomTrackShape extends RoundedRectSliderTrackShape {
-  @override
-  Rect getPreferredRect({
-    @required RenderBox parentBox,
-    Offset offset = Offset.zero,
-    @required SliderThemeData sliderTheme,
-    bool isEnabled = false,
-    bool isDiscrete = false,
-    
-  }) {
-    final double trackHeight = sliderTheme.trackHeight;
-    final double trackLeft = offset.dx;
-    final double trackTop =
-        offset.dy + (parentBox.size.height - trackHeight) / 2;
-    final double trackWidth = parentBox.size.width;
-    return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
-  }
-}*/
+    }

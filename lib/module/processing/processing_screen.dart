@@ -31,17 +31,14 @@ class _StartScreen extends State<ProcessingScreen> {
 
     _children = [
       RecentTab(title: 'Presets', tabWidget: const PresetsScreen()),
-      RecentTab(
-          title: 'Edit',
-          tabWidget:
-          EditorScreen(showOrHideBottomToolbar: showHideBottomToolbar)),
-      RecentTab(title: 'Textures', tabWidget: const TextureScreen()),
+      RecentTab(title: 'Edit', tabWidget:EditorScreen(showOrHideBottomToolbar: showHideBottomToolbar)),
+      RecentTab(title: 'Textures', tabWidget: TextureScreen(showOrHideBottomToolbar: showHideBottomToolbar)),
       RecentTab(title: 'Frames', tabWidget: const FramesScreen()),
       RecentTab(
           title: 'Video Effects',
-          tabWidget: const VideoScreen(
+          tabWidget: VideoScreen(
 
-            //onShowHideBottomToolbar
+           showOrHideBottomToolbar: showHideBottomToolbar
 
           ))
     ];
